@@ -1,49 +1,60 @@
 
 import React from 'react';
-import { SKILLS } from '../constants';
+import { motion } from 'motion/react';
+
+const SKILLS = [
+  {
+    title: "Clinical Machinery",
+    subtitle: "Master the latest in medical-grade aesthetics.",
+    imageUrl: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Korean Facials",
+    subtitle: "The iconic glass skin protocol and beyond.",
+    imageUrl: "https://images.unsplash.com/photo-1570172619992-052267ad7c3f?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Advanced Massage",
+    subtitle: "Sculpting techniques for non-invasive lifting.",
+    imageUrl: "https://images.unsplash.com/photo-1596178065887-11386138c4f6?q=80&w=800&auto=format&fit=crop"
+  }
+];
 
 const SkillStack: React.FC = () => {
   return (
-    <section className="bg-white py-24 md:py-32 px-6 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div className="max-w-xl">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-4">
-              The Skill Stack
-            </h2>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              Curated modules designed to elevate your artistry. From cellular health to advanced aesthetics.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="bg-white py-32 md:py-48 px-6 lg:px-24">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
           {SKILLS.map((skill, index) => (
-            <div 
-              key={index} 
-              className="group relative aspect-[3/4] overflow-hidden cursor-pointer bg-[#FEDCD0]"
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative aspect-[2/3] overflow-hidden cursor-pointer bg-brand-charcoal"
             >
               <img 
                 src={skill.imageUrl} 
                 alt={skill.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40"
+                className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-70"
+                referrerPolicy="no-referrer"
               />
               
-              {/* Overlay Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-4">
-                  <p className="text-[#1A1A1A] text-sm leading-relaxed font-light">
-                    {skill.description}
-                  </p>
-                </div>
-                <h3 className="font-serif text-2xl md:text-3xl text-white group-hover:text-[#1A1A1A] transition-colors duration-500">
+              <div className="absolute inset-0 flex flex-col justify-end p-12 z-10">
+                <h3 className="font-serif text-3xl md:text-4xl text-white mb-4 tracking-tight transition-transform duration-700 group-hover:-translate-y-2">
                   {skill.title}
                 </h3>
+                <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-700 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-white/80 text-sm tracking-widest uppercase font-light">
+                    {skill.subtitle}
+                  </p>
+                </div>
               </div>
 
-              {/* Borders */}
-              <div className="absolute inset-0 border border-white/20 group-hover:border-[#1A1A1A]/10 transition-colors" />
-            </div>
+              {/* Subtle Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,43 +1,128 @@
 
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+
+const PROGRAMS = [
+  {
+    title: "Specialty Modules",
+    subtitle: "Targeted Upskilling",
+    price: "From $500 AUD",
+    paymentInfo: "A La Carte Learning",
+    duration: "Short, intensive 3-7 hour modules for single technique mastery.",
+    bullets: ["HIFU Mastery", "Facial Lifting", "Baby Massage", "Deep Cleansing"],
+    cta: "View Specialty Modules",
+    highlight: false
+  },
+  {
+    title: "Foundation Program",
+    subtitle: "Start from zero",
+    price: "$3,500 AUD",
+    paymentInfo: "Payment Plans Available",
+    duration: "8 Weeks (96 Hours) | Hybrid (2w Online + 6w Practical)",
+    bullets: ["Full Body & V-Shape Facial", "Basic Korean Facial", "Skin Analysis"],
+    cta: "Explore Foundation",
+    highlight: false
+  },
+  {
+    title: "Intermediate Program",
+    subtitle: "Elevate your skills - 1yr experience",
+    price: "$4,800 AUD",
+    paymentInfo: "",
+    duration: "10 Weeks (120 Hours) | Hybrid (3w Online + 7w Practical)",
+    bullets: ["Device-Focused Clinical Training", "Water Bomb Protocol", "Anti-Aging Lifting"],
+    cta: "Explore Intermediate",
+    highlight: true
+  },
+  {
+    title: "Advanced Professional",
+    subtitle: "Elite standards - 2-3yrs experience",
+    price: "$6,800 AUD",
+    paymentInfo: "",
+    duration: "12 Weeks (144 Hours) | Hybrid (4w Online + 8w Practical)",
+    bullets: ["Lasers, HIFU, RF & Needling", "Advanced Skin Tag & Infusion", "Korean Kyeong Lak"],
+    cta: "Apply for Advanced",
+    highlight: false
+  }
+];
 
 const Pricing: React.FC = () => {
   return (
-    <section className="bg-[#FEDCD0]/30 py-24 md:py-40 px-6 lg:px-24">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif text-4xl md:text-6xl text-[#1A1A1A] text-center mb-20">
-          Choose Your Path
-        </h2>
+    <section className="bg-white py-32 md:py-48 px-6 lg:px-24" id="programs">
+      <div className="max-w-screen-2xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-center mb-24"
+        >
+          <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-6 tracking-tight">
+            Choose Your Path
+          </h2>
+          <p className="text-brand-charcoal/60 text-sm tracking-widest uppercase max-w-2xl mx-auto leading-relaxed">
+            From absolute beginners to seasoned therapists. <br className="hidden md:block" />
+            Optional 12-week clinical placements available.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-          {/* Card 1: Upskill */}
-          <div className="bg-white p-12 md:p-16 flex flex-col items-start hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-[#1A1A1A]/5">
-            <span className="text-xs uppercase tracking-[0.3em] text-[#1A1A1A]/40 mb-8 block">Option 01</span>
-            <h3 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4">Upskill</h3>
-            <p className="text-[#1A1A1A]/60 text-lg mb-4">Single Technique Courses</p>
-            <p className="text-[#1A1A1A]/40 text-sm mb-12 leading-relaxed">
-              Designed for established professionals looking to add high-revenue services like MTS or Gua Sha to their menu.
-            </p>
-            <button className="mt-auto group flex items-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 tracking-widest uppercase text-xs font-medium hover:bg-[#FEDCD0] hover:text-[#1A1A1A] transition-colors">
-              View Catalog
-              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+          {PROGRAMS.map((program, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              className={`p-12 md:p-16 flex flex-col items-start border border-brand-charcoal/5 transition-all duration-700 ${
+                program.highlight ? 'bg-brand-charcoal text-white' : 'bg-white text-brand-charcoal'
+              }`}
+            >
+              <div className="mb-12">
+                <p className={`text-[10px] tracking-[0.4em] uppercase mb-4 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>
+                  {program.subtitle}
+                </p>
+                <h3 className="font-serif text-3xl md:text-4xl mb-2 tracking-tight">
+                  {program.title}
+                </h3>
+                <div className="flex items-baseline gap-2 mt-6">
+                  <span className="text-3xl font-serif">{program.price}</span>
+                  {program.paymentInfo && (
+                    <span className={`text-[10px] tracking-widest uppercase ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>
+                      {program.paymentInfo}
+                    </span>
+                  )}
+                </div>
+              </div>
 
-          {/* Card 2: Career */}
-          <div className="bg-[#1A1A1A] p-12 md:p-16 flex flex-col items-start text-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-            <span className="text-xs uppercase tracking-[0.3em] text-white/40 mb-8 block">Option 02</span>
-            <h3 className="font-serif text-3xl md:text-4xl mb-4">Career</h3>
-            <p className="text-white/60 text-lg mb-4">Full Internship Package</p>
-            <p className="text-white/40 text-sm mb-12 leading-relaxed">
-              For those seeking total transformation. A 12-week immersive residency covering all protocols and clinic management.
-            </p>
-            <button className="mt-auto group flex items-center gap-3 bg-white text-[#1A1A1A] px-8 py-4 tracking-widest uppercase text-xs font-medium hover:bg-[#FEDCD0] transition-colors">
-              Apply for Internship
-              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
-          </div>
+              <div className="space-y-8 mb-16 flex-grow">
+                <div>
+                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>Duration</p>
+                  <p className="text-sm font-light leading-relaxed">{program.duration}</p>
+                </div>
+                <div>
+                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>Curriculum Highlights</p>
+                  <ul className="space-y-3">
+                    {program.bullets.map((bullet, i) => (
+                      <li key={i} className="text-sm font-light flex items-center gap-3">
+                        <div className={`w-1 h-1 rounded-full ${program.highlight ? 'bg-brand-pink' : 'bg-brand-pink'}`} />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <button 
+                className={`w-full py-5 text-[10px] tracking-[0.4em] uppercase font-medium transition-all duration-500 border ${
+                  program.highlight 
+                    ? 'bg-white text-brand-charcoal border-white hover:bg-brand-pink hover:border-brand-pink' 
+                    : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-brand-pink hover:border-brand-pink hover:text-brand-charcoal'
+                }`}
+              >
+                {program.cta}
+              </button>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,0 +1,207 @@
+[
+  {
+    "id": 3,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Context: You are an award-winning UI/UX designer specializing in high-end fashion and luxury beauty brands (think Vogue, Chanel, or Gentle Monster). You are designing a \"Layout B\" landing page for HBJ Academy, a premium institute teaching Korean Skincare techniques.\n\nDesign Goal: Create a \"Visual-First\" Aspirational Showcase. The user should feel like they are looking at a high-end portfolio or a luxury spa menu. Less reading, more seeing.\n\nVisual Identity:\n\nPalette: #FEDCD0 (Soft Pink) used for backgrounds/accents, White for clean space, and Deep Charcoal (#1A1A1A) for typography (instead of pure black) to feel softer/luxurious.\n\nTypography: Large, elegant Serif headings (e.g., Playfair Display) paired with clean Sans-Serif body text.\n\nVibe: Cinematic, immersive, expensive, \"Glass Skin\" aesthetic.\n\nPage Structure (Strictly follow this order):\n\nImmersive Hero Section:\n\nVisual: Full-screen background video (placeholder) showing slow-motion, satisfying close-ups of facial procedures.\n\nOverlay: Minimal text. Headline: \"Define Your Future in Korean Skincare.\" Subhead: \"Master the industry's most in-demand techniques.\"\n\nCTA: Single button: \"Explore the Curriculum\" (Ghost button style or elegant solid).\n\nThe \"Skill Stack\" (Visual Grid):\n\nReplace the \"Old vs New\" section.\n\nCreate a 3-column grid of vertical image cards.\n\nEach card represents a skill they will master (e.g., \"MTS Microneedling,\" \"Advanced Gua Sha,\" \"Korean Glass Skin\").\n\nInteraction: Hovering over the image reveals a short description of the technique.\n\nGoal: Show them what they will be able to do.\n\nThe \"Authority\" (Editorial Portrait):\n\nLayout: Split screen (50/50).\n\nLeft: A large, high-fashion portrait of the instructor, \"Master J.\"\n\nRight: A large pull-quote in Serif font: \"I don't just teach theory. I teach you what actually works on the clinic floor.\" followed by a small \"Meet Master J\" link.\n\nThe \"Tangible Value\" (The Kit - Critical Section):\n\nHeadline: \"Train with the Best.\"\n\nVisual: A large \"Knolling\" style image placeholder (flat lay photography) showing the Student Kit (Civasan/Leze products, tools, manuals) laid out neatly.\n\nText: \"Includes full professional kit with premium Civasan & Leze products.\"\n\nSocial Proof (The Instagram Wall):\n\nHeadline: \"Join the Next Generation.\"\n\nLayout: A Masonry Grid (like a Pinterest or Instagram feed) of 6-8 photos.\n\nContent: Mix of students holding certificates, \"Before & After\" client skins, and spa interior shots.\n\nNote: No text sliders. Pure visual proof.\n\nSimplified Pricing (The Path):\n\nHeadline: \"Choose Your Path.\"\n\nLayout: Two distinct, clean cards side-by-side.\n\nCard 1 (Upskill): \"Single Technique Courses\" -> \"For pros adding a new service.\" -> CTA: View Catalog.\n\nCard 2 (Career): \"Full Internship Package\" -> \"For total career transformation.\" -> CTA: Apply for Internship.\n\nFooter: Minimal. Social links, address, copyright.\n\nTechnical Constraints:\n\nEnsure the layout is responsive.\n\nUse generous whitespace (padding) between sections to create a \"luxury\" feel.\n\nDo not use standard \"feature list\" bullet points; use icons or grid layouts.",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770103688,
+      "nanos": 30000000
+    }
+  },
+  {
+    "id": 4,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Visualizing The Aesthetic**\n\nI'm now focusing on a \"visual-first\" aspirational showcase, aiming for an aesthetic that's cinematic, expensive-looking, and evokes a \"glass skin\" effect. My visual palette is starting to take shape with a soft pink (`#FEDCD0`), white, and a deep, nearly-black gray (`#1A1A1A`). I’m channeling inspiration from award-winning UI/UX designers, incorporating elements found in Vogue, Chanel, and Gentle Monster. I am also considering the premium Korean skincare influence from HBJ Academy.\n\n\n**Structuring The Components**\n\nI've outlined the major page components. I'm focusing on the component structure: a video hero section, skill stack showcase, an authority segment with a portrait and quote, tangible value display of a student kit, social proof (Masonry or IG-style), clean pricing cards, and a minimal footer. I've also planned the responsive layout with ample whitespace, no bullet points, and the necessary file structure. I'm prioritizing the hero section, considering a sticky header and video implementation.\n\n\n**Defining Component Mechanics**\n\nI'm now deep-diving into the individual component mechanics. Vertical skill stack cards will have specific aspect ratios, and the hover states using Tailwind's `group-hover` will display text overlays. The authority section layout and the tangible value section are centered with big images. The social proof section will have a masonry-like grid, and the pricing cards will feature elegant typography. The tech stack is defined as React 18+, TypeScript, Tailwind CSS, `lucide-react`, and `framer-motion`. I'm self-correcting on typography to include `font-serif` for headings and prioritizing consistent whitespace with proper padding. I am also implementing the color palette, and making the design accessible, and responsive.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770103688,
+      "nanos": 30000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770103696,
+      "nanos": 387000000
+    }
+  },
+  {
+    "id": 5,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "metadata.json",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Project metadata including name and description.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n{\n  \"name\": \"HBJ Academy - Luxury Skincare Landing\",\n  \"description\": \"A high-end, visual-first landing page for a premium Korean Skincare institute, featuring cinematic visuals, elegant typography, and a glass-skin aesthetic.\"\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main HTML entry point with Google Fonts and Tailwind CSS.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>HBJ Academy | Master Korean Skincare</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap\" rel=\"stylesheet\">\n    <style>\n      body {\n        font-family: 'Inter', sans-serif;\n        background-color: #ffffff;\n        color: #1A1A1A;\n      }\n      .font-serif {\n        font-family: 'Playfair Display', serif;\n      }\n      .masonry-grid {\n        display: block;\n        columns: 1;\n        gap: 1.5rem;\n      }\n      @media (min-width: 768px) {\n        .masonry-grid {\n          columns: 2;\n        }\n      }\n      @media (min-width: 1024px) {\n        .masonry-grid {\n          columns: 3;\n        }\n      }\n      .masonry-item {\n        break-inside: avoid;\n        margin-bottom: 1.5rem;\n      }\n      ::-webkit-scrollbar {\n        width: 8px;\n      }\n      ::-webkit-scrollbar-track {\n        background: #f1f1f1;\n      }\n      ::-webkit-scrollbar-thumb {\n        background: #FEDCD0;\n      }\n    </style>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "React entry point initializing the application.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main application component structuring the sections of the landing page.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport Hero from './components/Hero';\nimport SkillStack from './components/SkillStack';\nimport Authority from './components/Authority';\nimport TangibleValue from './components/TangibleValue';\nimport SocialProof from './components/SocialProof';\nimport Pricing from './components/Pricing';\nimport Footer from './components/Footer';\n\nconst App: React.FC = () => {\n  return (\n    <div className=\"min-h-screen selection:bg-[#FEDCD0] selection:text-[#1A1A1A]\">\n      <Hero />\n      <SkillStack />\n      <Authority />\n      <TangibleValue />\n      <SocialProof />\n      <Pricing />\n      <Footer />\n    </div>\n  );\n};\n\nexport default App;\n"
+            }
+          ]
+        },
+        {
+          "path": "types.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Shared TypeScript types for the application.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nexport interface Skill {\n  title: string;\n  description: string;\n  imageUrl: string;\n}\n\nexport interface SocialImage {\n  id: number;\n  imageUrl: string;\n  category: 'student' | 'result' | 'interior';\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "constants.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Constants used throughout the application, including theme colors and image links.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport { Skill, SocialImage } from './types';\n\nexport const COLORS = {\n  softPink: '#FEDCD0',\n  charcoal: '#1A1A1A',\n  white: '#FFFFFF',\n};\n\nexport const SKILLS: Skill[] = [\n  {\n    title: 'MTS Microneedling',\n    description: 'Master the art of Microneedling Therapy System to induce natural collagen and deep absorption.',\n    imageUrl: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop',\n  },\n  {\n    title: 'Advanced Gua Sha',\n    description: 'Traditional wisdom meets modern precision. Learn lymphatic drainage and facial contouring.',\n    imageUrl: 'https://images.unsplash.com/photo-1596178065887-11386138c4f6?q=80&w=800&auto=format&fit=crop',\n  },\n  {\n    title: 'Korean Glass Skin',\n    description: 'The ultimate hydration protocol. Techniques for achieving the iconic, translucent glow.',\n    imageUrl: 'https://images.unsplash.com/photo-1570172619992-052267ad7c3f?q=80&w=800&auto=format&fit=crop',\n  },\n];\n\nexport const SOCIAL_IMAGES: SocialImage[] = [\n  { id: 1, imageUrl: 'https://images.unsplash.com/photo-1596178067639-5c6e689a42e5?q=80&w=800&auto=format', category: 'interior' },\n  { id: 2, imageUrl: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format', category: 'result' },\n  { id: 3, imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format', category: 'student' },\n  { id: 4, imageUrl: 'https://images.unsplash.com/photo-1512290902246-0bb0a7a0307b?q=80&w=800&auto=format', category: 'result' },\n  { id: 5, imageUrl: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format', category: 'interior' },\n  { id: 6, imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format', category: 'student' },\n  { id: 7, imageUrl: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?q=80&w=800&auto=format', category: 'result' },\n  { id: 8, imageUrl: 'https://images.unsplash.com/photo-1598935534019-85020a837635?q=80&w=800&auto=format', category: 'interior' },\n];\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Hero.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Immersive hero section with a background video and minimalist overlay.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { ArrowRight } from 'lucide-react';\n\nconst Hero: React.FC = () => {\n  return (\n    <section className=\"relative h-screen w-full flex items-center justify-center overflow-hidden\">\n      {/* Cinematic Background Video Placeholder */}\n      <div className=\"absolute inset-0 z-0\">\n        <img \n          src=\"https://images.unsplash.com/photo-1512290902246-0bb0a7a0307b?q=80&w=1920&auto=format&fit=crop\" \n          alt=\"Luxury Skincare\"\n          className=\"w-full h-full object-cover filter brightness-50\"\n        />\n        <div className=\"absolute inset-0 bg-black/30 backdrop-blur-[2px]\" />\n      </div>\n\n      {/* Minimalist Overlay Content */}\n      <div className=\"relative z-10 text-center px-4 max-w-4xl mx-auto\">\n        <h1 className=\"font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight leading-tight\">\n          Define Your Future in <br />\n          <span className=\"italic\">Korean Skincare</span>\n        </h1>\n        <p className=\"text-white/80 text-lg md:text-xl font-light mb-10 tracking-widest uppercase\">\n          Master the industry's most in-demand techniques.\n        </p>\n        <button \n          className=\"group relative px-10 py-5 text-white border border-white hover:bg-white hover:text-[#1A1A1A] transition-all duration-500 font-medium tracking-widest uppercase text-sm\"\n        >\n          <span className=\"flex items-center gap-3\">\n            Explore the Curriculum\n            <ArrowRight size={18} className=\"group-hover:translate-x-1 transition-transform\" />\n          </span>\n        </button>\n      </div>\n\n      {/* Scroll Indicator */}\n      <div className=\"absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce\">\n        <div className=\"w-[1px] h-12 bg-white/40\" />\n      </div>\n    </section>\n  );\n};\n\nexport default Hero;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/SkillStack.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Visual-first 3-column grid showcasing skills with hover descriptions.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { SKILLS } from '../constants';\n\nconst SkillStack: React.FC = () => {\n  return (\n    <section className=\"bg-white py-24 md:py-32 px-6 lg:px-24\">\n      <div className=\"max-w-7xl mx-auto\">\n        <div className=\"flex flex-col md:flex-row justify-between items-end mb-16\">\n          <div className=\"max-w-xl\">\n            <h2 className=\"font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-4\">\n              The Skill Stack\n            </h2>\n            <p className=\"text-[#1A1A1A]/60 text-lg leading-relaxed\">\n              Curated modules designed to elevate your artistry. From cellular health to advanced aesthetics.\n            </p>\n          </div>\n        </div>\n\n        <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n          {SKILLS.map((skill, index) => (\n            <div \n              key={index} \n              className=\"group relative aspect-[3/4] overflow-hidden cursor-pointer bg-[#FEDCD0]\"\n            >\n              <img \n                src={skill.imageUrl} \n                alt={skill.title}\n                className=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40\"\n              />\n              \n              {/* Overlay Content */}\n              <div className=\"absolute inset-0 flex flex-col justify-end p-8 translate-y-8 group-hover:translate-y-0 transition-transform duration-500\">\n                <div className=\"opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-4\">\n                  <p className=\"text-[#1A1A1A] text-sm leading-relaxed font-light\">\n                    {skill.description}\n                  </p>\n                </div>\n                <h3 className=\"font-serif text-2xl md:text-3xl text-white group-hover:text-[#1A1A1A] transition-colors duration-500\">\n                  {skill.title}\n                </h3>\n              </div>\n\n              {/* Borders */}\n              <div className=\"absolute inset-0 border border-white/20 group-hover:border-[#1A1A1A]/10 transition-colors\" />\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default SkillStack;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Authority.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Split-screen authority section featuring the instructor and an editorial quote.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\nconst Authority: React.FC = () => {\n  return (\n    <section className=\"bg-[#FEDCD0] w-full min-h-screen flex flex-col md:flex-row\">\n      {/* Left: Editorial Portrait */}\n      <div className=\"w-full md:w-1/2 h-[60vh] md:h-screen relative overflow-hidden\">\n        <img \n          src=\"https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop\" \n          alt=\"Master J\"\n          className=\"w-full h-full object-cover object-top\"\n        />\n        <div className=\"absolute bottom-8 left-8 text-white z-10\">\n          <p className=\"text-xs tracking-[0.3em] uppercase mb-2\">Lead Educator</p>\n          <p className=\"font-serif text-3xl\">Master J</p>\n        </div>\n        <div className=\"absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent\" />\n      </div>\n\n      {/* Right: Editorial Quote */}\n      <div className=\"w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-white\">\n        <div className=\"max-w-lg\">\n          <span className=\"text-6xl font-serif text-[#FEDCD0] block mb-4 opacity-50\">“</span>\n          <h2 className=\"font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-tight mb-8\">\n            I don’t just teach theory. I teach you what <span className=\"italic\">actually works</span> on the clinic floor.\n          </h2>\n          <a \n            href=\"#meet-j\" \n            className=\"inline-block text-[#1A1A1A] text-sm tracking-widest uppercase border-b border-[#1A1A1A] pb-1 hover:opacity-60 transition-opacity\"\n          >\n            Meet Master J\n          </a>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Authority;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/TangibleValue.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "The Kit section showcasing the professional tools and products with a knolling-style visual.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\nconst TangibleValue: React.FC = () => {\n  return (\n    <section className=\"bg-white py-24 md:py-40 px-6 lg:px-24\">\n      <div className=\"max-w-6xl mx-auto text-center\">\n        <h2 className=\"font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-12\">\n          Train with the Best\n        </h2>\n        \n        {/* Knolling Style Flat Lay Placeholder */}\n        <div className=\"relative group mb-12\">\n          <div className=\"aspect-[16/9] overflow-hidden bg-gray-50 rounded-sm\">\n            <img \n              src=\"https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1600&auto=format&fit=crop\" \n              alt=\"Professional Skincare Kit\"\n              className=\"w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700\"\n            />\n          </div>\n          \n          {/* Subtle Annotations could go here */}\n          <div className=\"absolute top-1/4 right-1/4 hidden md:block\">\n            <div className=\"flex items-center gap-4\">\n              <div className=\"w-12 h-[1px] bg-[#1A1A1A]\" />\n              <span className=\"text-[10px] uppercase tracking-widest text-[#1A1A1A]\">Leze Professional Series</span>\n            </div>\n          </div>\n        </div>\n\n        <div className=\"max-w-2xl mx-auto\">\n          <p className=\"text-[#1A1A1A] text-xl md:text-2xl font-light leading-relaxed\">\n            Every enrollment includes a <span className=\"font-medium\">full professional kit</span> with premium Civasan & Leze products. Professional grade tools for a professional grade career.\n          </p>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default TangibleValue;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/SocialProof.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Masonry grid Instagram wall showcasing visual proof of students and results.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { SOCIAL_IMAGES } from '../constants';\n\nconst SocialProof: React.FC = () => {\n  return (\n    <section className=\"bg-white py-24 md:py-32 px-6 lg:px-24\">\n      <div className=\"max-w-7xl mx-auto\">\n        <div className=\"text-center mb-16\">\n          <h2 className=\"font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-4\">\n            Join the Next Generation\n          </h2>\n          <p className=\"text-[#1A1A1A]/40 uppercase tracking-[0.2em] text-sm\">\n            Our community of elite practitioners\n          </p>\n        </div>\n\n        <div className=\"masonry-grid\">\n          {SOCIAL_IMAGES.map((img) => (\n            <div key={img.id} className=\"masonry-item relative group overflow-hidden\">\n              <img \n                src={img.imageUrl} \n                alt=\"Social proof\"\n                className=\"w-full h-auto object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500\"\n              />\n              <div className=\"absolute inset-0 bg-[#FEDCD0]/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none\" />\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default SocialProof;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Pricing.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Path selection section with two clean, distinct cards for different student goals.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport { ArrowUpRight } from 'lucide-react';\n\nconst Pricing: React.FC = () => {\n  return (\n    <section className=\"bg-[#FEDCD0]/30 py-24 md:py-40 px-6 lg:px-24\">\n      <div className=\"max-w-6xl mx-auto\">\n        <h2 className=\"font-serif text-4xl md:text-6xl text-[#1A1A1A] text-center mb-20\">\n          Choose Your Path\n        </h2>\n\n        <div className=\"grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20\">\n          {/* Card 1: Upskill */}\n          <div className=\"bg-white p-12 md:p-16 flex flex-col items-start hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-[#1A1A1A]/5\">\n            <span className=\"text-xs uppercase tracking-[0.3em] text-[#1A1A1A]/40 mb-8 block\">Option 01</span>\n            <h3 className=\"font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4\">Upskill</h3>\n            <p className=\"text-[#1A1A1A]/60 text-lg mb-4\">Single Technique Courses</p>\n            <p className=\"text-[#1A1A1A]/40 text-sm mb-12 leading-relaxed\">\n              Designed for established professionals looking to add high-revenue services like MTS or Gua Sha to their menu.\n            </p>\n            <button className=\"mt-auto group flex items-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 tracking-widest uppercase text-xs font-medium hover:bg-[#FEDCD0] hover:text-[#1A1A1A] transition-colors\">\n              View Catalog\n              <ArrowUpRight size={16} className=\"group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform\" />\n            </button>\n          </div>\n\n          {/* Card 2: Career */}\n          <div className=\"bg-[#1A1A1A] p-12 md:p-16 flex flex-col items-start text-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500\">\n            <span className=\"text-xs uppercase tracking-[0.3em] text-white/40 mb-8 block\">Option 02</span>\n            <h3 className=\"font-serif text-3xl md:text-4xl mb-4\">Career</h3>\n            <p className=\"text-white/60 text-lg mb-4\">Full Internship Package</p>\n            <p className=\"text-white/40 text-sm mb-12 leading-relaxed\">\n              For those seeking total transformation. A 12-week immersive residency covering all protocols and clinic management.\n            </p>\n            <button className=\"mt-auto group flex items-center gap-3 bg-white text-[#1A1A1A] px-8 py-4 tracking-widest uppercase text-xs font-medium hover:bg-[#FEDCD0] transition-colors\">\n              Apply for Internship\n              <ArrowUpRight size={16} className=\"group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform\" />\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Pricing;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Footer.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Minimal footer with essential links and elegant typography.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\nconst Footer: React.FC = () => {\n  return (\n    <footer className=\"bg-white py-12 px-6 lg:px-24 border-t border-gray-100\">\n      <div className=\"max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8\">\n        <div className=\"text-center md:text-left\">\n          <h2 className=\"font-serif text-2xl tracking-tight text-[#1A1A1A] mb-2 uppercase\">HBJ Academy</h2>\n          <p className=\"text-[10px] tracking-[0.4em] uppercase text-[#1A1A1A]/40 italic\">Seoul &bull; Global Education</p>\n        </div>\n\n        <div className=\"flex gap-12 text-xs tracking-widest uppercase text-[#1A1A1A]/60\">\n          <a href=\"#instagram\" className=\"hover:text-[#1A1A1A] transition-colors\">Instagram</a>\n          <a href=\"#youtube\" className=\"hover:text-[#1A1A1A] transition-colors\">YouTube</a>\n          <a href=\"#contact\" className=\"hover:text-[#1A1A1A] transition-colors\">Contact</a>\n        </div>\n\n        <div className=\"text-[10px] tracking-widest text-[#1A1A1A]/40 uppercase text-center md:text-right\">\n          &copy; {new Date().getFullYear()} HBJ Academy. All Rights Reserved.\n        </div>\n      </div>\n    </footer>\n  );\n};\n\nexport default Footer;\n"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1770103696,
+      "nanos": 387000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770103697,
+      "nanos": 57000000
+    }
+  }
+]

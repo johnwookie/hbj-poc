@@ -1,115 +1,117 @@
-import React, { useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Menu, X, User } from 'lucide-react';
 
 const Header: React.FC = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Courses', path: '/courses' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Contact', path: '/contact' }
-    ];
-
-    // Helper function for active styling
-    const getNavClass = ({ isActive }: { isActive: boolean }) => {
-        // Special case for root to avoid highlighting '/' when on '/about', though NavLink handles this with 'end' prop usually.
-        return `text-sm font-medium transition-colors ${isActive
-                ? 'text-neutral-900 border-b-2 border-neutral-900 pb-1'
-                : 'text-neutral-500 hover:text-neutral-900'
-            }`;
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    // Close mobile menu on route change
-    React.useEffect(() => {
-        setIsMobileMenuOpen(false);
-    }, [location.pathname]);
+  const navLinks = [
+    { name: 'Course', href: '#programs' },
+    { name: 'About', href: '#biography' },
+    { name: 'Contact Us', href: '#contact' },
+  ];
 
-    return (
-        <header className="bg-white border-b border-neutral-100 sticky top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+  return (
+    <header 
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-brand-charcoal/5' : 'bg-transparent py-8'
+      }`}
+    >
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-24 flex items-center justify-between">
+        {/* Logo */}
+        <a href="/" className="group">
+          <h1 className={`font-serif text-xl md:text-2xl tracking-tighter transition-colors duration-500 ${isScrolled ? 'text-brand-charcoal' : 'text-white'}`}>
+            HBJ <span className="font-light italic">Academy</span>
+          </h1>
+        </a>
 
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link to="/" className="font-serif text-2xl tracking-tight text-neutral-900 uppercase">
-                            HBJ Academy
-                        </Link>
-                    </div>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-12">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href}
+                className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${
+                  isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex space-x-8">
-                        {navLinks.map((link) => (
-                            <NavLink
-                                key={link.path}
-                                to={link.path}
-                                end={link.path === '/'}
-                                className={getNavClass}
-                            >
-                                {link.name}
-                            </NavLink>
-                        ))}
-                    </nav>
+          <div className="flex items-center gap-6 border-l border-brand-charcoal/10 pl-6">
+            <a 
+              href="#login"
+              className={`flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${
+                isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
+              }`}
+            >
+              <User size={14} />
+              Log In
+            </a>
+            <button className="px-8 py-3 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium hover:bg-brand-pink hover:text-brand-charcoal transition-all duration-500">
+              Apply Now
+            </button>
+          </div>
+        </nav>
 
-                    {/* Checkout CTA Desktop */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        <Link
-                            to="/checkout"
-                            className="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-lg text-white bg-neutral-900 hover:bg-neutral-800 transition-colors shadow-sm"
-                        >
-                            <ShoppingCart size={16} className="mr-2" />
-                            Checkout
-                        </Link>
-                    </div>
+        {/* Mobile Toggle */}
+        <button 
+          className={`md:hidden p-2 transition-colors duration-500 ${isScrolled ? 'text-brand-charcoal' : 'text-white'}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
-                    {/* Mobile menu button */}
-                    <div className="flex items-center md:hidden">
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="text-neutral-500 hover:text-neutral-900 p-2"
-                        >
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
-                </div>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-white border-b border-brand-charcoal/5 p-8 md:hidden"
+          >
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-[10px] tracking-[0.4em] uppercase font-medium text-brand-charcoal/60 hover:text-brand-pink"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="h-[1px] bg-brand-charcoal/5 w-full" />
+              <a 
+                href="#login"
+                className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium text-brand-charcoal/60"
+              >
+                <User size={14} />
+                Log In
+              </a>
+              <button className="w-full py-4 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium">
+                Apply Now
+              </button>
             </div>
-
-            {/* Mobile Menu Dropdown */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden bg-white border-t border-neutral-100 shadow-lg absolute w-full left-0">
-                    <div className="px-4 pt-2 pb-6 space-y-1">
-                        {navLinks.map((link) => (
-                            <NavLink
-                                key={link.path}
-                                to={link.path}
-                                end={link.path === '/'}
-                                className={({ isActive }) =>
-                                    `block px-3 py-4 rounded-md text-base font-medium ${isActive
-                                        ? 'bg-neutral-50 text-neutral-900'
-                                        : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
-                                    }`
-                                }
-                            >
-                                {link.name}
-                            </NavLink>
-                        ))}
-                        <div className="pt-4 mt-2 border-t border-neutral-100">
-                            <Link
-                                to="/checkout"
-                                className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-neutral-900 hover:bg-neutral-800"
-                            >
-                                <ShoppingCart size={18} className="mr-2" />
-                                Checkout
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </header>
-    );
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
 };
 
 export default Header;

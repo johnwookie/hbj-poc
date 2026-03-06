@@ -1,30 +1,115 @@
 
 import React from 'react';
-import { SOCIAL_IMAGES } from '../constants';
+import { motion } from 'motion/react';
+import { Play, Quote } from 'lucide-react';
+
+const TESTIMONIALS = [
+  {
+    type: 'video',
+    url: 'https://images.unsplash.com/photo-1596178067639-5c6e689a42e5?q=80&w=800&auto=format',
+    name: 'Sarah J.',
+    role: 'Clinic Owner',
+    span: 'col-span-1 row-span-2'
+  },
+  {
+    type: 'text',
+    quote: "The Korean protocols I learned here completely transformed my business. My clients are obsessed with the 'Glass Skin' result.",
+    name: 'Elena M.',
+    role: 'Senior Aesthetician',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    type: 'video',
+    url: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format',
+    name: 'Jessica K.',
+    role: 'HBJ Graduate',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    type: 'text',
+    quote: "Master J's approach is unlike anything in the West. It's precision-based and result-driven. Truly elite education.",
+    name: 'Michael R.',
+    role: 'Dermal Therapist',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    type: 'video',
+    url: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format',
+    name: 'Chloe L.',
+    role: 'Spa Manager',
+    span: 'col-span-1 row-span-2'
+  },
+  {
+    type: 'text',
+    quote: "The student kit alone is worth the investment. I felt ready to treat clients from day one of my practicals.",
+    name: 'Aria S.',
+    role: 'Junior Aesthetician',
+    span: 'col-span-1 row-span-1'
+  },
+];
 
 const SocialProof: React.FC = () => {
   return (
-    <section className="bg-white py-24 md:py-32 px-6 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-4">
-            Join the Next Generation
+    <section className="bg-white py-32 md:py-48 px-6 lg:px-24">
+      <div className="max-w-screen-2xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mb-24"
+        >
+          <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-4 tracking-tight">
+            The Next Generation <br /> of Masters.
           </h2>
-          <p className="text-[#1A1A1A]/40 uppercase tracking-[0.2em] text-sm">
-            Our community of elite practitioners
+          <p className="text-brand-charcoal/40 text-[10px] tracking-[0.5em] uppercase">
+            Student testimonials & success stories
           </p>
-        </div>
+        </motion.div>
 
-        <div className="masonry-grid">
-          {SOCIAL_IMAGES.map((img) => (
-            <div key={img.id} className="masonry-item relative group overflow-hidden">
-              <img 
-                src={img.imageUrl} 
-                alt="Social proof"
-                className="w-full h-auto object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-[#FEDCD0]/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {TESTIMONIALS.map((item, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className={`relative group overflow-hidden rounded-[32px] ${
+                item.type === 'text' ? 'bg-brand-pink/10 p-10 flex flex-col justify-between' : 'bg-brand-charcoal aspect-[4/5]'
+              }`}
+            >
+              {item.type === 'video' ? (
+                <>
+                  <img 
+                    src={item.url} 
+                    alt={item.name}
+                    className="w-full h-full object-cover opacity-60 grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-500">
+                      <Play size={24} fill="currentColor" className="ml-1" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-8 left-8 text-white">
+                    <p className="font-serif text-xl mb-1">{item.name}</p>
+                    <p className="text-[10px] tracking-widest uppercase text-white/60">{item.role}</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Quote className="text-brand-pink mb-8" size={32} />
+                  <p className="text-brand-charcoal/80 text-lg font-light leading-relaxed italic mb-12">
+                    "{item.quote}"
+                  </p>
+                  <div>
+                    <p className="font-serif text-xl text-brand-charcoal mb-1">{item.name}</p>
+                    <p className="text-[10px] tracking-widest uppercase text-brand-charcoal/40">{item.role}</p>
+                  </div>
+                </>
+              )}
+            </motion.div>
           ))}
         </div>
       </div>
