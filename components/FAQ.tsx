@@ -4,36 +4,32 @@ import { Plus, Minus } from 'lucide-react';
 
 const FAQS = [
   {
-    question: "Do I need prior experience to enroll?",
-    answer: "No, our Foundation Program is designed specifically for absolute beginners. We start with the basics of skin anatomy and build your skills from the ground up."
+    question: "Do I need prior experience or qualifications?",
+    answer: "No. Our Foundation Program is designed for absolute beginners — no beauty diploma or prior qualifications are required. Australia has no licensing requirement for beauty and massage work, so you can start from zero."
   },
   {
-    question: "Are the certifications recognized globally?",
-    answer: "Yes, HBJ Academy certifications are highly regarded in the industry worldwide, particularly in the growing sector of Korean clinical aesthetics."
+    question: "Where are classes held?",
+    answer: "All practical training takes place at our Melbourne CBD facility — Level 3, 415 Bourke Street, Melbourne VIC 3000. Classes run twice a week, 10am to 4pm with a one-hour break."
   },
   {
-    question: "What is the 'Hybrid' learning model?",
-    answer: "Our hybrid model combines the flexibility of online theory modules with intensive, hands-on practical training at our clinical facilities."
+    question: "Is the student kit included in tuition?",
+    answer: "Yes. Every full program enrolment includes a comprehensive professional kit with medical-grade products — all included in your tuition fee."
   },
   {
-    question: "Is the student kit included in the tuition?",
-    answer: "Yes, every full program enrollment includes a comprehensive professional kit featuring premium Civasan & Leze medical-grade products."
+    question: "Do you offer job placement or internships?",
+    answer: "Yes. Our Paid Internship Package includes a 3-month apprenticeship contract at Healing by J. High-performing students may also transition into part-time or ongoing roles at the clinic."
   },
   {
-    question: "Do you offer job placement assistance?",
-    answer: "Absolutely. We have a dedicated career support team that helps with job placements in top-tier spas and provides guidance for setting up your own clinic."
+    question: "Can I pay in instalments?",
+    answer: "Yes. We offer flexible payment plans for the Foundation Program — a $150 application fee plus bi-weekly instalments. Contact us for full details."
   },
   {
-    question: "Can I pay in installments?",
-    answer: "Yes, we offer flexible payment plans for our Foundation and Intermediate programs to make elite education more accessible."
+    question: "What are the optional clinical placements?",
+    answer: "Our Intermediate and Advanced programs offer an optional 12-week full-time work placement, giving you real-world experience in a high-volume clinical environment."
   },
   {
-    question: "What is the duration of the clinical placements?",
-    answer: "Optional clinical placements are available for up to 12 weeks, providing real-world experience in a high-volume clinical environment."
-  },
-  {
-    question: "How do I apply for the Advanced Professional course?",
-    answer: "The Advanced course requires 2-3 years of industry experience. You can apply via our website, and our admissions team will review your portfolio and experience."
+    question: "How do I apply?",
+    answer: "Simply fill out the contact form below or call us on 0490 059 261. Our team will guide you through the enrolment process and help you choose the right program for your experience level."
   }
 ];
 

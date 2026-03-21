@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
               <span className="italic font-light">Transformation.</span>
             </h2>
             <p className="text-white/40 text-sm tracking-widest uppercase mb-16 max-w-md leading-relaxed">
-              Our admissions team is here to guide you through the curriculum and help you choose the right path for your career.
+              Our team is here to guide you through our courses and help you choose the right path for your career.
             </p>
 
             <div className="space-y-12">
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.4em] uppercase text-white/30 mb-2">Email Us</p>
-                  <p className="text-lg font-light">admissions@hbjacademy.com</p>
+                  <p className="text-lg font-light">support@hbjacademy.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.4em] uppercase text-white/30 mb-2">Call Us</p>
-                  <p className="text-lg font-light">+82 2-123-4567</p>
+                  <p className="text-lg font-light">0490 059 261</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.4em] uppercase text-white/30 mb-2">Visit Us</p>
-                  <p className="text-lg font-light">Gangnam-gu, Seoul, South Korea</p>
+                  <p className="text-lg font-light">Level 3, 415 Bourke Street, Melbourne VIC 3000</p>
                 </div>
               </div>
             </div>

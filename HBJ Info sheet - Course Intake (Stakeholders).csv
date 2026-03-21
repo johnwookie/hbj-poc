@@ -1,0 +1,82 @@
+course_title,slug,course_kind,track,delivery_mode,short_summary,full_description,duration_value,duration_unit,schedule_notes,sessions_per_week,session_hours,total_hours,cohort_required,cohort_name,start_date,end_date,seats_total,price_total,currency,payment_options,deposit_required,application_fee,refund_policy,internship_included,internship_details,what_you_learn,curriculum_outline,assessment_notes,category_tags,hero_media_url,gallery_media_urls,is_published,notes_for_admin
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Foundation Program,"Korean Basic Skincare Program 
+
+
+
+
+
+",program,professional,hybrid(2weeks online Theory + 6 Weeks Theory and Practical Training) ,"Build real industry experience, practical training, daily clinic ops.","8-week program, combines theory, practical training, assessments, reviews...",8,weeks,"Twice a week, 10 am - 4 pm, 1 hr break",2,6,96,TRUE,Fall 2026 Cohort,2026-09-01,2026-10-31,15,3500,AUD,"Upfront, Installments (4 parts)",TRUE,300,"100% before 6 weeks, 70% before 4 weeks",TRUE,"12-week contract, 6-hr shifts, 2 times a week","Client Services, Soft Skills, Therapist Roles, Skin type and condition
+Cosmetics, Skin Structure and Functions, Myology of Body
+Full Body Massage,
+Cleansing,  Facial Massage, Cleansing, Deep Cleansing
+Decolletage Massage,  Scalp Massage, Application of a Modeling Mask
+Basic Extraction, Korean Hydrafacial Treatment
+
+
+
+
+
+","
+
+week 1: Intro, Therapist Roles, Client Services, Soft skills, Skin type and condition
+week 2: Cosmetics, Skin structure and Functions, Myology
+week 3: Full Body Massge 
+week 4: Facial Massage, Cleansing, Deep Cleansing
+week 5: Decolletage Massage, Scalp Massage, Modeling mask
+week 6 : Basic Extraction, Korean Hydrafacial Treatment
+week 7:  Hands-On Practice with Classmate
+week 8: Theory & Practical Test / Hands-On Practice with Real Clients
+
+
+
+
+
+",Exams and 90% attendance required,"Beginner, Foundation, Full Body, Facial",,,FALSE,Needs review before publish
+Deep Cleansing Workshop,deep-cleansing,single_course,casual,in_person,Learn professional deep cleansing techniques.,A 5-hour comprehensive hands-on workshop to master Face deep cleansing.,5,hours,One-Day Masterclass,1,5,5,FALSE,,,,,800,AUD,Upfront,FALSE,0,"100% before 7 days, 50% before 1 day ",FALSE,,Cosmetic Product Types and Application Methods,Theory and Hand-on Practice,No formal assessment,"Facial, Fundamentals",,,FALSE,Stand-alone module for anyone
+Decollete Massage,Decollte Massage Technique & Flow,single_course,casual,in_person,Learn professional Decollte Massage techniques,A 5-hour comprehensive hands-on workshop to master Decollte Massage ,5,hours,One-Day Masterclass,1,5,5,,,,,,800,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Décolleté Massage Techniques and Types of Muscles,Theory and Hand-on Practice,No formal assessment,"Facial, Fundamentals",,,,Stand-alone module for anyone
+Face Massage ,Face Massage Technique & Flow,single_course,casual,in_person,Learn professional Face Massage techniques ,A 5-hour comprehensive hands-on workshop to master Face Massage ,5,hours,One-Day Masterclass,1,5,5,,,,,,800,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Face Massage Techniques and Types of Muscles,Theory and Hand-on Practice,No formal assessment,"Facial, Fundamentals",,,,Stand-alone module for anyone
+Cosmetics,Cosmetic Classification,single_course,casual,in_person,"Cosmetic Classification, Proper Usage, and Synergistic Effects with Aesthetic Devices","Gain comprehensive knowledge of cosmetic types, ingredients, 
+and proper application methods.",5,hours,One-Day Masterclass,1,5,5,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Develop an understanding of cosmetic types, key ingredients, and proper application methods.",Theory and Hand-on Practice,No formal assessment,"Cosmetics, Fundamentals",,,,Stand-alone module for anyone
+Needling Infusion ,Needling Infusion ,single_course,Professional,in_person,Needling Infusion Ampoule Selection by Skin Type and Facial Area,Ampoule Classification and Targeted Application for Needling Infusion,3,hours,One-Day Masterclass,1,3,3,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Needling Infusion Protocols and Ampoule Selection Strategy,Theory and Hand-on Practice,No formal assessment,"Microneedling, Ampoule infusion",,,,
+HIFU ,HIFU ,single_course,Professional,in_person,HIFU Protocols by Facial Area and Skin Type,"Understanding the principles of HIFU, selecting the appropriate skin type, 
+choosing the correct depth, determining treatment intervals, and post-treatment care.",5,hours,One-Day Masterclass,,5,5,,,,,,1000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,HIFU Principles and Treatment Techniques for Different Skin Types and areas,Theory and Hand-on Practice,No formal assessment,,,,,
+Microneedling,Scaring Treatment ,single_course,Professional,in_person,,"Understanding the difference between needling and ampoule infusion, 
+learning absorption techniques based on ampoule types, 
+and achieving optimal treatment results.",5,hours,One-Day Masterclass,1,5,5,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Needling and Ampoule Infusion Techniques, Absorption Methods, and Expected Effects",Theory and Hand-on Practice,No formal assessment,,,,,
+Peeling,Scaring Treatment ,single_course,Professional,in_person,Chemical and Herbal Peeling Methods,"Understanding the differences between chemical and herbal peeling, 
+selecting the appropriate skin type, and learning correct treatment procedures.
+Post-treatment care",5,hours,One-Day Masterclass,1,5,5,,,,,,1000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Chemical vs Herbal Peeling: Skin Types, Indications, and Treatment Methods",Theory and Hand-on Practice,No formal assessment,,,,,
+Piocoway Laser,"Pigmentaion, Freckles, Melasma
+Toning",single_course,Professional,in_person,Classification of Pigmentation and Treatment Techniques,"Learn how to treat melasma, freckles, and pigmentation using Pico laser, 
+how to select the appropriate wavelength based on pigment depth, and proper treatment techniques.",5,hours,One-Day Masterclass,1,5,5,,,,,,1500,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Pico Laser Pigmentation Treatment, Wavelength Selection, and Clinical Techniques",Theory and Hand-on Practice,No formal assessment,,,,,
+Endermologie ,Body massage & Slimming,single_course,Professional,in_person,Endermologie Techniques for Face and Body Treatments,Learn face and body treatment protocols using the Endermologie device and understand the expected effects and clinical applications.,5,hours,One-Day Masterclass,1,5,5,,,,,,1000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Endermologie Protocols for Face and Body Treatments,Theory and Hand-on Practice,No formal assessment,,,,,
+Mole Removal,Skin tag & mole removal,single_course,Professional,in_person,Clinical Skin Tag and Mole Removal Techniques,"Learn safe techniques for removing whiteheads, skin tags, and minor skin lesions on the face and body, along with proper post-treatment care.",5,hours,One-Day Masterclass,1,5,5,,,,,,1000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Facial Contouring and Anti-Aging Using RF and Lifting Devices,Theory and Hand-on Practice,No formal assessment,,,,,
+HBJ V LIFT,Facial Sculpting & Anti-ageing,single_course,Professional,in_person,Advanced Facial Contouring Using Aesthetic Devices and Manual Techniques,Learn advanced facial contouring and anti-aging techniques using RF and lifting devices to achieve visible results in a single session.,5,hours,One-Day Masterclass,1,5,5,,,,,,2000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,Minor Skin Lesion Removal Techniques and Post-Treatment Care,Theory and Hand-on Practice,No formal assessment,,,,,
+Fat Freezing,Slimming Treatment,single_course,Professional,in_person,Fat Freezing Technology and Treatment Protocols,"Learn the principles of fat freezing, proper treatment methods, and how to combine cryolipolysis with other devices to enhance treatment results.",3,hours,One-Day Masterclass,1,3,3,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Fat Freezing(Cryolipolysis) Principles, Treatment Methods, and Combination Techniques",Theory and Hand-on Practice,No formal assessment,,,,,
+Fat Laser,Slimming Treatment,single_course,Professional,in_person,Fat Laser Technology and Treatment Protocols,"Learn the principles of fat Laser, proper treatment methods, and how to combine Fat Laser with other devices to enhance treatment results.",3,hours,One-Day Masterclass,1,3,3,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Fat Laser Principles, Treatment Methods, and Combination Techniques",Theory and Hand-on Practice,No formal assessment,,,,,
+Fat Cavitation,Slimming Treatment,single_course,Professional,in_person,Fat Cavitation Technology and Treatment Protocols,"Learn the principles of fat Cavitation, proper treatment methods, and how to combine Fat cavitation with other devices to enhance treatment results.",3,hours,One-Day Masterclass,1,3,3,,,,,,600,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Fat Cavitation Principles, Treatment Methods, and Combination Techniques",Theory and Hand-on Practice,No formal assessment,,,,,
+Buccal Massage,Buccal Massage ,single_course,Professional,in_person,Buccal Massage for Immediate Wrinkle Improvement,"Learn the fundamentals of buccal massage, understand facial muscle movement and structure, and master techniques that deliver immediate visible results.",5,hours,One-Day Masterclass,1,3,3,,,,,,3000,AUD,Upfront,,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Buccal Massage: Muscle Anatomy, Techniques, and Immediate Results",Theory and Hand-on Practice,No formal assessment,Buccal Massage ,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Skin Type Theory Online,Skin Type ,online_course,casual,online,Comprehensive Guide to Skin Types and Consideration Factors,"Learn how to identify your skin type and understand how the skin changes depending on seasons, climate, and environmental conditions.",3,hours,Self-paced,FALSE,3,3,FALSE,,,,,300,AUD,Upfront,FALSE,0,No refunds for digital products,FALSE,,Skin Type Analysis and Seasonal Skin Changes,Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,FALSE,
+Cosmetic Theory Online ,Cosmetic Classification & Ingredients ,online_course,casual,online,Understanding Cosmetic Categories and How to Use Them,"Learn about different types of cosmetics, how to use them correctly, the differences between key ingredients, and how to choose the right products for your skin type.",3,hours,Self-paced,FALSE,3,3,FALSE,,,,,300,AUD,Upfront,FALSE,0,No refunds for digital products,FALSE,,"Cosmetic Types, Key Ingredients, and How to Choose the Right Products",Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+Skin Science Basics,Skin Structure and Function,online_course,Professional,"online(Required Modules for Basic, Intermediate, and Advanced) ",Skin Structure and Function,Learn the structure of the skin and understand the role and characteristics of each layer and function.,3,hours,Self-paced,FALSE,3,3,,,,,,,,,,,,,,"Skin Structure, Functions, and Characteristics",Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+Therapist Roles,Beauty Therapist ,online_course,Professional,"online(Required Modules for Basic, Intermediate, and Advanced)",Role and Professional Attitude of a Therapist,Learn proper hygiene standards for therapists and develop the correct professional attitude when working with clients.,1,hours,Self-paced,FALSE,1,1,,,,,,,,,,,,,,Hygiene Standards and Professional Conduct for Therapists,Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+Client Services,Client Services,online_course,Professional,"online(Required Modules for Basic, Intermediate, and Advanced)",Client Service and Communication,"Learn important precautions during treatments, how to explain procedures clearly, and effective communication skills when working with clients.",1,hours,Self-paced,FALSE,1,1,,,,,,,,,,,,,,Client Communication and Professional Service Skills,Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+Soft Skills,Soft Skills,online_course,Professional,"online(Required Modules for Basic, Intermediate, and Advanced)",Professional Soft Skills,"Learn how to build professional relationships with coworkers, improve teamwork, and communicate effectively in the workplace.",1,hours,Self-paced,FALSE,1,1,,,,,,,,,,,,,,"Understanding and Applying Professional Soft Skills(Clients, Workplace)",Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+Myology,Myology,online_course,Professional,"online(Required Modules for Basic, Intermediate, and Advanced)",Muscle Anatomy and Techniques for Pain and Tension Relief,Learn muscle anatomy and understand how to relieve overall body pain and tension through proper myology-based techniques.,6,hours,Self-paced,FALSE,6,6,,,,,,,,,,,,,,Understanding Myology for Pain and Tension Relief,Video modules 1-5,Multiple Choice Quizzes,"Online, Theory",,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Baby Massage,baby-massage,specialty_module,casual,in_person,"This module focuses on massage techniques designed to help relieve 
+growing pains in children. Supports nervous system.","Learn the causes of growing pains in children, the correct massage areas, proper techniques, frequency of treatment, and how to control pressure safely.",3,hours,Self-paced,FALSE,3,3,FALSE,,,,,500,AUD,Upfront,FALSE,0,"100% before 7 days, 50% before 1 day ",FALSE,,"Baby anatomy, gentle techniques",3 hour practical,Observation,"Specialty, Family",,,FALSE,Can be taken independently
+Lower Back Release Massage,Body Massage,specialty_module,casual,in_person,Therapeutic Massage for Lower Back Pain,"Learn the causes of lower back pain, pain relief massage techniques, proper posture correction, and the relationship between muscles and the spine.",3,hours,Self-paced,FALSE,3,3,,,,,,500,AUD,Upfront,FALSE,0,"100% before 7 days, 50% before 1 day ",FALSE,,Back Pain Relief and Postural Correction,3 hour practical,Observation,"Specialty, Family",,,FALSE,Can be taken independently
+Abdominal Circulation Massage,Body Massage,specialty_module,casual,in_person,Abdominal Circulation Therapy for Women’s Health,"Learn the relationship between the abdomen and lymphatic circulation, abdominal massage techniques, important precautions, and methods to relieve menstrual pain safely.",3,hours,Self-paced,FALSE,3,3,,,,,,500,AUD,Upfront,FALSE,0,"100% before 7 days, 50% before 1 day ",FALSE,,Fundamentals of Abdominal Therapy and Techniques,3 hour practical,Observation,"Specialty, Family",,,FALSE,Can be taken independently
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Intermediate Program,"Korean Intermediate
+ Skincare program",program,professional,hybrid(3weeks online Theory + 7 Weeks Theory and Practical Training),"Elevate skills, for therapists with 1 yrs experience.","Over 10 weeks, Aesthetic Device-Focused Clinical Training",10,weeks,"Twice a week, 10 am - 4 pm, 1 hr break",2,6,120,TRUE,,,,,4800,AUD,"Installment, Upfront",TRUE,500,"100% before 6 weeks, 70% before 4 weeks",TRUE,"12-week contract, 6-hr shifts, 2 times a week","Microneedling, Chemical and Herbal Peeling Techniques, Microneedling Infusion Techniques, Extraction
+Slimming Massage, Remedial Massage ","Week 1: Remedial, Week 2: Lasers…
+Week3:
+Week4:","Practical and Theory exams
+90% attendance required","Slimming Machinery, Micro Needling ",,,,
+Advanced Professional Program,Korean advanced Skincare -pro,program,professional,hybrid(4weeks online Theory + 8 Weeks Theory and Practical Training),"Elevate skills, for therapists with 2-3 yrs experience.","Over 12 weeks, refine advanced techniques, Clinical Treatments and Post-Treatment Care",12,weeks,"Twice a week, 10 am - 4 pm, 1 hr break",2,6,144,TRUE,Winter Pro Cohort,2026-06-01,2026-08-31,10,6800,AUD,"Installment, Upfront",TRUE,700,"100% before 6 weeks, 70% before 4 weeks",TRUE,"12-week contract, 6-hr shifts, 2 times a week","PicoLasers, HIFU, Fractional RF, Skin Tag Removal, Goong woman therapy","Week 1: Remedial, Week 2: Lasers...","Practical and Theory exams
+90% attendance required","Advanced, Pro, Lasers",,,FALSE,Requires induction fee

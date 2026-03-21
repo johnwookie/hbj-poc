@@ -6,45 +6,61 @@ import { Globe, Zap, Briefcase } from 'lucide-react';
 const BENEFITS = [
   {
     icon: <Globe size={24} />,
-    title: "Global Expertise",
-    description: "Curriculum developed directly from Seoul's top aesthetic clinics."
+    title: "Authentic Korean Instruction",
+    description: "Taught by native Korean-trained therapists. Not adapted Western versions — the real techniques direct from Seoul."
   },
   {
     icon: <Zap size={24} />,
-    title: "Future Tech",
-    description: "Master Microneedling, Red Light Therapy, and Plasma induction."
+    title: "Earn While You Study",
+    description: "From month one, passing a module can unlock paid work shifts at the Healing by J clinic in Melbourne CBD."
   },
   {
     icon: <Briefcase size={24} />,
-    title: "Career Ready",
-    description: "Post-graduate support including job placement and clinic setup help."
+    title: "Job Guarantee Pathway",
+    description: "Our Paid Internship Package includes a 3-month apprenticeship contract at Healing by J. Top students transition into paid roles."
   }
 ];
 
 const PHASES = [
   {
     number: "01",
-    title: "On-Demand Theory",
-    description: "Gain instant access to our digital library of 50+ modules covering skin anatomy, product chemistry, and Korean protocols."
+    title: "Theory & Foundations",
+    description: "Flexible scheduling — 2 days per week, 10am to 4pm. Covers skin anatomy, product chemistry, massage techniques, and Korean protocols."
   },
   {
     number: "02",
-    title: "Clinical Practicals",
-    description: "Join us for 40 hours of intensive in-person training with live models, overseen by senior HBJ instructors."
+    title: "Hands-On Practicals",
+    description: "Intensive in-person training with live models at our Melbourne CBD facility, overseen by senior HBJ instructors including Jane Kim."
   },
   {
     number: "03",
-    title: "Certification & Launch",
-    description: "Receive your HBJ Global Certification and personalized business roadmap to start your own clinic or join a top-tier spa."
+    title: "Internship & Certification",
+    description: "Graduate with your HBJ certification. Top-performing students may transition into paid roles at Healing by J through our apprenticeship pathway."
   }
 ];
 
 const TangibleValue: React.FC = () => {
   return (
-    <section className="bg-white py-32 md:py-48 px-6 lg:px-24">
+    <section className="bg-white py-16 md:py-24 px-6 lg:px-24">
       <div className="max-w-screen-2xl mx-auto">
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-6 tracking-tight">
+            Why HBJ Academy
+          </h2>
+          <p className="text-brand-charcoal/40 text-[10px] tracking-[0.5em] uppercase">
+            What makes us different
+          </p>
+        </motion.div>
+
         {/* Benefits Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-48">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
           {BENEFITS.map((benefit, index) => (
             <motion.div
               key={index}
@@ -66,7 +82,7 @@ const TangibleValue: React.FC = () => {
         </div>
 
         {/* Train with the Best Section */}
-        <div className="mb-48">
+        <div className="mb-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +117,7 @@ const TangibleValue: React.FC = () => {
                 <div className="bg-brand-charcoal text-white p-8 max-w-xs rounded-2xl">
                   <p className="text-[10px] tracking-[0.4em] uppercase mb-2 text-white/40">Included</p>
                   <p className="text-sm font-light leading-relaxed">
-                    Every full program includes a comprehensive professional kit featuring premium Civasan & Leze medical-grade products.
+                    Every full program includes a comprehensive professional kit with medical-grade products — included in your tuition.
                   </p>
                 </div>
               </div>
@@ -115,14 +131,14 @@ const TangibleValue: React.FC = () => {
               className="lg:col-span-4 space-y-8"
             >
               <p className="text-brand-charcoal text-xl md:text-2xl font-serif leading-relaxed italic">
-                "Do not learn on basic materials."
+                "Don't learn on basic materials."
               </p>
               <p className="text-brand-charcoal/60 text-base font-light leading-relaxed">
-                We believe your education is only as good as the tools you use. Our kits are curated from the same medical-grade lines used in Seoul's top clinics.
+                Your education is only as good as the tools you train with. Every full program includes a professional kit featuring the same medical-grade products we use daily at Healing by J.
               </p>
               <div className="pt-8">
                 <ul className="space-y-4">
-                  {['Civasan Medical Series', 'Leze Professional Protocols', 'Advanced Device Kit', 'Clinical Grade Topicals'].map((item, i) => (
+                  {['Professional Product Kit', 'Clinical Device Training', 'Hydrafacial & RF Equipment', 'Endermologie Systems'].map((item, i) => (
                     <li key={i} className="flex items-center gap-4 text-[10px] tracking-[0.3em] uppercase text-brand-charcoal/40">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-pink" />
                       {item}
@@ -147,7 +163,7 @@ const TangibleValue: React.FC = () => {
               The Path to Mastery
             </h2>
             <p className="text-brand-charcoal/60 text-sm tracking-widest uppercase max-w-2xl mx-auto leading-relaxed">
-              Your journey from student to elite aesthetician in three clear phases.
+              Your journey from student to working therapist in three clear phases.
             </p>
           </motion.div>
 

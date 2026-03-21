@@ -21,10 +21,27 @@
   .tracking-luxury {
     letter-spacing: 0.15em;
   }
-  
+
   .glass-skin {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
+}
+
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel-scroll {
+  animation: carousel-scroll 40s linear infinite;
+}
+
+.group-hover-carousel:hover .animate-carousel-scroll {
+  animation-play-state: paused;
 }

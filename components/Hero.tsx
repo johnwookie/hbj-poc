@@ -24,8 +24,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl text-white mb-8 tracking-tight leading-[0.9]">
-            Master the Art of Glow <br />
-            <span className="italic font-light">with Korean Skincare.</span>
+            Authentic Korean <br />
+            <span className="italic font-light">Beauty Training.</span>
           </h1>
         </motion.div>
 
@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-white/70 text-base md:text-lg font-sans font-light mb-12 tracking-[0.2em] uppercase max-w-3xl mx-auto leading-relaxed">
-            Bridging the gap between traditional aesthetics and advanced Korean clinical skincare. <br className="hidden md:block" />
-            Master the industry's most in-demand techniques.
+            Melbourne's only academy teaching real Korean beauty techniques <br className="hidden md:block" />
+            — backed by 20+ years of clinic experience. No prior qualifications needed.
           </p>
         </motion.div>
 
@@ -46,16 +46,18 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.5, delay: 0.8 }}
           className="flex flex-col md:flex-row items-center justify-center gap-6"
         >
-          <button 
-            className="w-full md:w-auto px-12 py-5 bg-brand-charcoal text-white border border-white/20 hover:bg-white hover:text-brand-charcoal transition-all duration-700 font-sans tracking-[0.3em] uppercase text-xs font-medium"
+          <a
+            href="#programs"
+            className="w-full md:w-auto px-12 py-5 bg-brand-charcoal text-white border border-white/20 hover:bg-white hover:text-brand-charcoal transition-all duration-700 font-sans tracking-[0.3em] uppercase text-xs font-medium text-center"
           >
-            Explore Curriculum
-          </button>
-          <button 
-            className="w-full md:w-auto px-12 py-5 bg-transparent text-white border border-white/40 hover:border-white transition-all duration-700 font-sans tracking-[0.3em] uppercase text-xs font-medium"
+            Explore Courses
+          </a>
+          <a
+            href="#contact"
+            className="w-full md:w-auto px-12 py-5 bg-transparent text-white border border-white/40 hover:border-white transition-all duration-700 font-sans tracking-[0.3em] uppercase text-xs font-medium text-center"
           >
             Contact Us
-          </button>
+          </a>
         </motion.div>
       </div>
 

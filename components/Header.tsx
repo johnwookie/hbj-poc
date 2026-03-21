@@ -21,10 +21,9 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-brand-charcoal/5' : 'bg-transparent py-8'
-      }`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-brand-charcoal/5' : 'bg-transparent py-8'
+        }`}
     >
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-24 flex items-center justify-between">
         {/* Logo */}
@@ -38,12 +37,11 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center gap-12">
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.name}
                 href={link.href}
-                className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${
-                  isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
-                }`}
+                className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
+                  }`}
               >
                 {link.name}
               </a>
@@ -51,23 +49,22 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-6 border-l border-brand-charcoal/10 pl-6">
-            <a 
+            <a
               href="#login"
-              className={`flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${
-                isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
-              }`}
+              className={`flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
+                }`}
             >
               <User size={14} />
               Log In
             </a>
-            <button className="px-8 py-3 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium hover:bg-brand-pink hover:text-brand-charcoal transition-all duration-500">
+            <a href="#programs" className="px-8 py-3 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium hover:bg-brand-pink hover:text-brand-charcoal transition-all duration-500">
               Apply Now
-            </button>
+            </a>
           </div>
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className={`md:hidden p-2 transition-colors duration-500 ${isScrolled ? 'text-brand-charcoal' : 'text-white'}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -86,7 +83,7 @@ const Header: React.FC = () => {
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <a 
+                <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -96,16 +93,16 @@ const Header: React.FC = () => {
                 </a>
               ))}
               <div className="h-[1px] bg-brand-charcoal/5 w-full" />
-              <a 
+              <a
                 href="#login"
                 className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium text-brand-charcoal/60"
               >
                 <User size={14} />
                 Log In
               </a>
-              <button className="w-full py-4 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium">
+              <a href="#programs" className="block w-full py-4 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium text-center">
                 Apply Now
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

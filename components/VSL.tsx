@@ -32,10 +32,10 @@ const VSL: React.FC = () => {
             </motion.button>
 
             <h2 className="font-serif text-4xl md:text-6xl text-white mb-6 tracking-tight">
-              The HBJ Experience
+              See What You'll Learn
             </h2>
             <p className="text-white/80 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
-              Watch how we transform passionate students into elite aestheticians through our signature Korean curriculum.
+              From V-Shape facial lifting to Kyeong-lak meridian therapy and clinical machinery — watch how our students train with real techniques from day one.
             </p>
           </div>
 
