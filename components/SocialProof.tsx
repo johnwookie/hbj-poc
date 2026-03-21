@@ -7,43 +7,43 @@ const TESTIMONIALS = [
   {
     type: 'video',
     url: 'https://images.unsplash.com/photo-1596178067639-5c6e689a42e5?q=80&w=800&auto=format',
-    name: 'Sarah J.',
-    role: 'Clinic Owner',
+    name: 'Video Testimonial',
+    role: 'Coming Soon',
     span: 'col-span-1 row-span-2'
   },
   {
     type: 'text',
-    quote: "The Korean protocols I learned here completely transformed my business. My clients are obsessed with the 'Glass Skin' result.",
-    name: 'Elena M.',
-    role: 'Senior Aesthetician',
-    span: 'col-span-1 row-span-1'
-  },
-  {
-    type: 'video',
-    url: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format',
-    name: 'Jessica K.',
-    role: 'HBJ Graduate',
+    quote: "Thank you so much Jane for everything!! You're sincerely one of the best teachers with enthusiasm that I know of. We hope we can make you proud in the future!",
+    name: 'Anna',
+    role: 'HBJ Academy Graduate',
     span: 'col-span-1 row-span-1'
   },
   {
     type: 'text',
-    quote: "Master J's approach is unlike anything in the West. It's precision-based and result-driven. Truly elite education.",
-    name: 'Michael R.',
-    role: 'Dermal Therapist',
+    quote: "Thank you Jane for being such a wonderful teacher. I learned so many things from you and from teacher Wonkyung, and I'm very grateful for your guidance and kindness.",
+    name: 'Palm',
+    role: 'HBJ Academy Graduate',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    type: 'text',
+    quote: "I had the best time and thanks for teaching us, so honoured to meet everyone!! We should catch up for dinner together!",
+    name: 'Janette Cheng',
+    role: 'HBJ Academy Graduate',
     span: 'col-span-1 row-span-1'
   },
   {
     type: 'video',
     url: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format',
-    name: 'Chloe L.',
-    role: 'Spa Manager',
+    name: 'Video Testimonial',
+    role: 'Coming Soon',
     span: 'col-span-1 row-span-2'
   },
   {
     type: 'text',
-    quote: "The student kit alone is worth the investment. I felt ready to treat clients from day one of my practicals.",
-    name: 'Aria S.',
-    role: 'Junior Aesthetician',
+    quote: "Thank you everyone. I had a good time with all of you guys. Thank you Jane, Andy and Instructor Wonkyung for delivering your teaching very clear.",
+    name: 'Tho Vuong',
+    role: 'HBJ Academy Graduate',
     span: 'col-span-1 row-span-1'
   },
 ];

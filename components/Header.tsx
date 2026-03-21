@@ -15,8 +15,8 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Course', href: '#programs' },
-    { name: 'About', href: '#biography' },
+    { name: 'Courses', href: '#programs' },
+    { name: 'About', href: '#about' },
     { name: 'Contact Us', href: '#contact' },
   ];
 
@@ -60,9 +60,9 @@ const Header: React.FC = () => {
               <User size={14} />
               Log In
             </a>
-            <button className="px-8 py-3 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium hover:bg-brand-pink hover:text-brand-charcoal transition-all duration-500">
+            <a href="#programs" className="px-8 py-3 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium hover:bg-brand-pink hover:text-brand-charcoal transition-all duration-500">
               Apply Now
-            </button>
+            </a>
           </div>
         </nav>
 
@@ -103,9 +103,9 @@ const Header: React.FC = () => {
                 <User size={14} />
                 Log In
               </a>
-              <button className="w-full py-4 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium">
+              <a href="#programs" className="block w-full py-4 bg-brand-charcoal text-white text-[10px] tracking-[0.4em] uppercase font-medium text-center">
                 Apply Now
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

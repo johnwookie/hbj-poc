@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const Authority: React.FC = () => {
   return (
-    <section className="bg-white w-full min-h-screen flex flex-col md:flex-row overflow-hidden">
+    <section id="about" className="bg-white w-full min-h-screen flex flex-col md:flex-row overflow-hidden">
       {/* Left: Editorial Portrait */}
       <div className="w-full md:w-1/2 h-[70vh] md:h-screen relative overflow-hidden">
         <motion.img 
@@ -13,7 +13,7 @@ const Authority: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" 
-          alt="Master J - Lead Instructor"
+          alt="Jane Kim - Lead Instructor"
           className="w-full h-full object-cover object-top grayscale"
           referrerPolicy="no-referrer"
         />
@@ -25,7 +25,7 @@ const Authority: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <p className="text-[10px] tracking-[0.5em] uppercase mb-4 text-white/60">Lead Educator</p>
-            <p className="font-serif text-4xl md:text-5xl tracking-tight">Master J</p>
+            <p className="font-serif text-4xl md:text-5xl tracking-tight">Jane Kim</p>
           </motion.div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-transparent" />
@@ -42,17 +42,17 @@ const Authority: React.FC = () => {
         >
           <span className="text-8xl font-serif text-brand-pink block -mb-8 opacity-40">“</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-charcoal leading-[1.1] mb-12">
-            I don’t just teach theory. I teach what <span className="italic font-light">actually works</span> on the clinic floor.
+            I don’t teach textbook theory. I teach what <span className="italic font-light">actually works</span> — refined over 20 years in my own clinic.
           </h2>
           <div className="space-y-6">
             <p className="text-brand-charcoal/60 text-sm tracking-widest uppercase font-light">
-              15 years of experience in Seoul's Gangnam district.
+              20+ years experience. Founder of Healing by J, Melbourne CBD.
             </p>
-            <a 
-              href="#biography" 
+            <a
+              href="#programs"
               className="inline-block text-brand-charcoal text-xs tracking-[0.3em] uppercase border-b border-brand-charcoal/20 pb-2 hover:border-brand-charcoal transition-all duration-500"
             >
-              Read Biography
+              View Courses
             </a>
           </div>
         </motion.div>
