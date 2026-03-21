@@ -1,32 +1,26 @@
-
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import VSL from './components/VSL';
-import SkillStack from './components/SkillStack';
-import Authority from './components/Authority';
-import TangibleValue from './components/TangibleValue';
-import SocialProof from './components/SocialProof';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import CoursesPage from './pages/CoursesPage';
+import CourseDetailPage from './pages/CourseDetailPage';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-brand-pink selection:text-brand-charcoal">
-      <Header />
-      <Hero />
-      <VSL />
-      <SkillStack />
-      <Authority />
-      <TangibleValue />
-      <SocialProof />
-      <Pricing />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen selection:bg-brand-pink selection:text-brand-charcoal pt-0">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/courses/:slug" element={<CourseDetailPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
