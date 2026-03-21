@@ -5,41 +5,41 @@ import { motion } from 'motion/react';
 const PROGRAMS = [
   {
     title: "Specialty Modules",
-    subtitle: "Targeted Upskilling",
+    subtitle: "Flexible single modules for everyone",
     price: "From $500 AUD",
-    paymentInfo: "A La Carte Learning",
-    duration: "Short, intensive 3-7 hour modules for single technique mastery.",
-    bullets: ["HIFU Mastery", "Facial Lifting", "Baby Massage", "Deep Cleansing"],
-    cta: "View Specialty Modules",
+    paymentInfo: "Per Module",
+    duration: "3-hour standalone sessions — no prerequisites required.",
+    bullets: ["Facial Lifting Massage", "Headache Relief Massage", "Baby Massage", "Lower Back Release", "Abdominal Circulation"],
+    cta: "View Modules",
     highlight: false
   },
   {
     title: "Foundation Program",
-    subtitle: "Start from zero",
+    subtitle: "Start from zero — no experience needed",
     price: "$3,500 AUD",
     paymentInfo: "Payment Plans Available",
-    duration: "8 Weeks (96 Hours) | Hybrid (2w Online + 6w Practical)",
-    bullets: ["Full Body & V-Shape Facial", "Basic Korean Facial", "Skin Analysis"],
+    duration: "8 Weeks | 2x per week, 10am–4pm",
+    bullets: ["Full Body Massage", "V-Shape Facial Lifting", "Korean Basic Facial", "Hydrafacial & RF", "Endermologie & Slimming", "Skin Analysis"],
     cta: "Explore Foundation",
     highlight: false
   },
   {
     title: "Intermediate Program",
-    subtitle: "Elevate your skills - 1yr experience",
+    subtitle: "For therapists with 1+ year experience",
     price: "$4,800 AUD",
     paymentInfo: "",
-    duration: "10 Weeks (120 Hours) | Hybrid (3w Online + 7w Practical)",
-    bullets: ["Device-Focused Clinical Training", "Water Bomb Protocol", "Anti-Aging Lifting"],
+    duration: "10 Weeks + Optional 12-Week Placement",
+    bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation"],
     cta: "Explore Intermediate",
     highlight: true
   },
   {
     title: "Advanced Professional",
-    subtitle: "Elite standards - 2-3yrs experience",
+    subtitle: "For professionals with 2–3 years experience",
     price: "$6,800 AUD",
     paymentInfo: "",
-    duration: "12 Weeks (144 Hours) | Hybrid (4w Online + 8w Practical)",
-    bullets: ["Lasers, HIFU, RF & Needling", "Advanced Skin Tag & Infusion", "Korean Kyeong Lak"],
+    duration: "12 Weeks + Optional 12-Week Placement",
+    bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment"],
     cta: "Apply for Advanced",
     highlight: false
   }
@@ -60,8 +60,8 @@ const Pricing: React.FC = () => {
             Choose Your Path
           </h2>
           <p className="text-brand-charcoal/60 text-sm tracking-widest uppercase max-w-2xl mx-auto leading-relaxed">
-            From absolute beginners to seasoned therapists. <br className="hidden md:block" />
-            Optional 12-week clinical placements available.
+            From absolute beginners to seasoned professionals. <br className="hidden md:block" />
+            Single professional courses also available — HIFU, Deep Cleansing, and more.
           </p>
         </motion.div>
 
@@ -104,7 +104,7 @@ const Pricing: React.FC = () => {
                   <ul className="space-y-3">
                     {program.bullets.map((bullet, i) => (
                       <li key={i} className="text-sm font-light flex items-center gap-3">
-                        <div className={`w-1 h-1 rounded-full ${program.highlight ? 'bg-brand-pink' : 'bg-brand-pink'}`} />
+                        <div className="w-1 h-1 rounded-full bg-brand-pink" />
                         {bullet}
                       </li>
                     ))}
