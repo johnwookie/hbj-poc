@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, Check } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = data.get('name') as string;
+    const email = data.get('email') as string;
+    const phone = data.get('phone') as string;
+    const program = data.get('program') as string;
+    const message = data.get('message') as string;
+
+    const subject = encodeURIComponent(`New Inquiry — ${program}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProgram of Interest: ${program}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:support@hbjacademy.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
   return (
     <section className="bg-brand-charcoal py-32 md:py-48 px-6 lg:px-24 text-white" id="contact">
       <div className="max-w-screen-2xl mx-auto">
@@ -61,28 +83,44 @@ const Contact: React.FC = () => {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="bg-white/5 p-12 md:p-16 rounded-[40px] backdrop-blur-sm border border-white/10"
           >
-            <form className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-[10px] tracking-[0.4em] uppercase text-white/30 ml-1">Full Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="name"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light"
                     placeholder="Jane Doe"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] tracking-[0.4em] uppercase text-white/30 ml-1">Email Address</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
+                    name="email"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light"
                     placeholder="jane@example.com"
                   />
                 </div>
               </div>
               <div className="space-y-2">
+                <label className="text-[10px] tracking-[0.4em] uppercase text-white/30 ml-1">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light"
+                  placeholder="04XX XXX XXX"
+                />
+              </div>
+              <div className="space-y-2">
                 <label className="text-[10px] tracking-[0.4em] uppercase text-white/30 ml-1">Program of Interest</label>
-                <select className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light appearance-none">
+                <select
+                  name="program"
+                  className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light appearance-none"
+                >
                   <option className="bg-brand-charcoal">Foundation Program</option>
                   <option className="bg-brand-charcoal">Intermediate Program</option>
                   <option className="bg-brand-charcoal">Advanced Professional</option>
@@ -91,15 +129,28 @@ const Contact: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] tracking-[0.4em] uppercase text-white/30 ml-1">Your Message</label>
-                <textarea 
+                <textarea
+                  name="message"
                   rows={4}
                   className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-pink outline-none transition-colors font-light resize-none"
                   placeholder="Tell us about your career goals..."
                 />
               </div>
-              <button className="w-full py-6 bg-brand-pink text-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-white transition-all duration-500 flex items-center justify-center gap-4">
-                Send Inquiry
-                <ArrowRight size={16} />
+              <button
+                type="submit"
+                className="w-full py-6 bg-brand-pink text-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-white transition-all duration-500 flex items-center justify-center gap-4"
+              >
+                {submitted ? (
+                  <>
+                    Opening Email Client
+                    <Check size={16} />
+                  </>
+                ) : (
+                  <>
+                    Send Inquiry
+                    <ArrowRight size={16} />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>

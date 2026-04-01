@@ -9,6 +9,7 @@ const PROGRAMS = [
     price: "From $500 AUD",
     paymentInfo: "Per Module",
     duration: "3-hour standalone sessions — no prerequisites required.",
+    bulletLabel: "Modules can include",
     bullets: ["Facial Lifting Massage", "Headache Relief Massage", "Baby Massage", "Lower Back Release", "Abdominal Circulation"],
     cta: "View Modules",
     highlight: false
@@ -18,7 +19,8 @@ const PROGRAMS = [
     subtitle: "Start from zero — no experience needed",
     price: "$3,500 AUD",
     paymentInfo: "Payment Plans Available",
-    duration: "8 Weeks | 2x per week, 10am–4pm",
+    duration: "8 Weeks — 2 days per week, 10am to 4pm",
+    bulletLabel: "Program Highlights",
     bullets: ["Full Body Massage", "V-Shape Facial Lifting", "Korean Basic Facial", "Hydrafacial & RF", "Endermologie & Slimming", "Skin Analysis"],
     cta: "Explore Foundation",
     highlight: false
@@ -29,7 +31,8 @@ const PROGRAMS = [
     price: "$4,800 AUD",
     paymentInfo: "",
     duration: "10 Weeks + Optional 12-Week Placement",
-    bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation"],
+    bulletLabel: "Program Highlights",
+    bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation", "Advanced Skin Analysis", "Professional Clinic Standards"],
     cta: "Explore Intermediate",
     highlight: true
   },
@@ -39,7 +42,8 @@ const PROGRAMS = [
     price: "$6,800 AUD",
     paymentInfo: "",
     duration: "12 Weeks + Optional 12-Week Placement",
-    bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment"],
+    bulletLabel: "Program Highlights",
+    bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment & Extraction", "Goong Woman Therapy"],
     cta: "Apply for Advanced",
     highlight: false
   }
@@ -100,7 +104,7 @@ const Pricing: React.FC = () => {
                   <p className="text-sm font-light leading-relaxed">{program.duration}</p>
                 </div>
                 <div>
-                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>Curriculum Highlights</p>
+                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>{program.bulletLabel}</p>
                   <ul className="space-y-3">
                     {program.bullets.map((bullet, i) => (
                       <li key={i} className="text-sm font-light flex items-center gap-3">
