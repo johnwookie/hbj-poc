@@ -25,6 +25,13 @@ const Authority: React.FC = () => {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-md"
         >
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-8 border-2 border-white/10">
+            <img
+              src="/images/KakaoTalk_Photo_2026-04-03-16-38-00.png"
+              alt="Jane Kim"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <p className="text-[10px] tracking-[0.5em] uppercase mb-6 text-white/40">Founder & Lead Instructor</p>
           <h3 className="font-serif text-5xl md:text-6xl text-white tracking-tight mb-4">Jane Kim</h3>
           <p className="text-brand-pink text-sm tracking-widest uppercase font-light mb-12">20+ years of experience</p>
