@@ -106,7 +106,7 @@ const TangibleValue: React.FC = () => {
             >
               <div className="aspect-[4/3] overflow-hidden bg-gray-50 rounded-3xl">
                 <img
-                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1600&auto=format&fit=crop"
+                  src="/images/KakaoTalk_Photo_2026-04-17-16-14-42.jpeg"
                   alt="Professional Student Kit Flat Lay"
                   className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0"
                   referrerPolicy="no-referrer"
