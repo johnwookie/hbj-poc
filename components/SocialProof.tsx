@@ -18,6 +18,10 @@ const videoTestimonials = [
     src: '/testimonials/KakaoTalk_Video_2026-05-11-12-30-11.mp4',
     label: "",
   },
+  {
+    src: '/testimonials/Tiffany Testimonial.mp4',
+    label: "Tiffany",
+  },
 ];
 
 const SocialProof: React.FC = () => {
