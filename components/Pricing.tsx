@@ -6,9 +6,10 @@ const PROGRAMS = [
   {
     title: "Specialty Modules",
     subtitle: "Flexible single modules for everyone",
-    price: "From $500 AUD",
+    price: "From $500",
     paymentInfo: "Per Module",
     duration: "3-hour standalone sessions — no prerequisites required.",
+    bulletLabel: "Modules can include",
     bullets: ["Facial Lifting Massage", "Headache Relief Massage", "Baby Massage", "Lower Back Release", "Abdominal Circulation"],
     cta: "View Modules",
     highlight: false
@@ -16,9 +17,10 @@ const PROGRAMS = [
   {
     title: "Foundation Program",
     subtitle: "Start from zero — no experience needed",
-    price: "$3,500 AUD",
+    price: "$3,500",
     paymentInfo: "Payment Plans Available",
-    duration: "8 Weeks | 2x per week, 10am–4pm",
+    duration: "8 Weeks — 2 days per week, 10am to 4pm",
+    bulletLabel: "Program Highlights",
     bullets: ["Full Body Massage", "V-Shape Facial Lifting", "Korean Basic Facial", "Hydrafacial & RF", "Endermologie & Slimming", "Skin Analysis"],
     cta: "Explore Foundation",
     highlight: false
@@ -26,20 +28,22 @@ const PROGRAMS = [
   {
     title: "Intermediate Program",
     subtitle: "For therapists with 1+ year experience",
-    price: "$4,800 AUD",
+    price: "$4,800",
     paymentInfo: "",
     duration: "10 Weeks + Optional 12-Week Placement",
-    bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation"],
+    bulletLabel: "Program Highlights",
+    bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation", "Advanced Skin Analysis", "Professional Clinic Standards"],
     cta: "Explore Intermediate",
     highlight: true
   },
   {
     title: "Advanced Professional",
     subtitle: "For professionals with 2–3 years experience",
-    price: "$6,800 AUD",
+    price: "$6,800",
     paymentInfo: "",
     duration: "12 Weeks + Optional 12-Week Placement",
-    bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment"],
+    bulletLabel: "Program Highlights",
+    bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment & Extraction", "Goong Woman Therapy"],
     cta: "Apply for Advanced",
     highlight: false
   }
@@ -49,7 +53,7 @@ const Pricing: React.FC = () => {
   return (
     <section className="bg-white py-32 md:py-48 px-6 lg:px-24" id="programs">
       <div className="max-w-screen-2xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -67,15 +71,14 @@ const Pricing: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
           {PROGRAMS.map((program, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: index * 0.2 }}
-              className={`p-12 md:p-16 flex flex-col items-start border border-brand-charcoal/5 transition-all duration-700 ${
-                program.highlight ? 'bg-brand-charcoal text-white' : 'bg-white text-brand-charcoal'
-              }`}
+              className={`p-12 md:p-16 flex flex-col items-start border border-brand-charcoal/5 transition-all duration-700 ${program.highlight ? 'bg-brand-charcoal text-white' : 'bg-white text-brand-charcoal'
+                }`}
             >
               <div className="mb-12">
                 <p className={`text-[10px] tracking-[0.4em] uppercase mb-4 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>
@@ -100,7 +103,7 @@ const Pricing: React.FC = () => {
                   <p className="text-sm font-light leading-relaxed">{program.duration}</p>
                 </div>
                 <div>
-                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>Curriculum Highlights</p>
+                  <p className={`text-[10px] tracking-[0.3em] uppercase mb-3 ${program.highlight ? 'text-white/40' : 'text-brand-charcoal/40'}`}>{program.bulletLabel}</p>
                   <ul className="space-y-3">
                     {program.bullets.map((bullet, i) => (
                       <li key={i} className="text-sm font-light flex items-center gap-3">
@@ -112,12 +115,11 @@ const Pricing: React.FC = () => {
                 </div>
               </div>
 
-              <button 
-                className={`w-full py-5 text-[10px] tracking-[0.4em] uppercase font-medium transition-all duration-500 border ${
-                  program.highlight 
-                    ? 'bg-white text-brand-charcoal border-white hover:bg-brand-pink hover:border-brand-pink' 
+              <button
+                className={`w-full py-5 text-[10px] tracking-[0.4em] uppercase font-medium transition-all duration-500 border ${program.highlight
+                    ? 'bg-white text-brand-charcoal border-white hover:bg-brand-pink hover:border-brand-pink'
                     : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-brand-pink hover:border-brand-pink hover:text-brand-charcoal'
-                }`}
+                  }`}
               >
                 {program.cta}
               </button>

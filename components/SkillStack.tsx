@@ -11,12 +11,12 @@ const SKILLS = [
   {
     title: "Korean Kyeong-lak (경락)",
     subtitle: "Meridian-based massage rooted in Traditional Korean Medicine. Pressure along energy pathways to rejuvenate skin and body.",
-    imageUrl: "https://images.unsplash.com/photo-1570172619992-052267ad7c3f?q=80&w=800&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Clinical Machinery",
     subtitle: "Hands-on training with HIFU, RF, Endermologie, Hydrafacial, and Picoway — the same devices used in Seoul's top clinics.",
-    imageUrl: "https://images.unsplash.com/photo-1596178065887-11386138c4f6?q=80&w=800&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Water Bomb Facials",
@@ -41,7 +41,7 @@ const SKILLS = [
   {
     title: "Korean Body Scrub",
     subtitle: "Traditional Italy towel exfoliation technique — a staple of Korean bathhouse culture, now a premium spa service.",
-    imageUrl: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?q=80&w=800&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
