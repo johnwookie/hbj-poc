@@ -7,8 +7,8 @@ const Hero: React.FC = () => {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-charcoal">
       {/* Cinematic Background Video Placeholder */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1512290902246-0bb0a7a0307b?q=80&w=1920&auto=format&fit=crop" 
+        <img
+          src="https://images.unsplash.com/photo-1512290902246-0bb0a7a0307b?q=80&w=1920&auto=format&fit=crop"
           alt="Luxury Skincare Procedure"
           className="w-full h-full object-cover filter brightness-[0.4] scale-105 animate-pulse-slow"
           referrerPolicy="no-referrer"
@@ -35,8 +35,11 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-white/70 text-base md:text-lg font-sans font-light mb-12 tracking-[0.2em] uppercase max-w-3xl mx-auto leading-relaxed">
-            Melbourne's only academy teaching real Korean beauty techniques <br className="hidden md:block" />
-            — backed by 20+ years of clinic experience. No prior qualifications needed.
+            The only academy in Melbourne teaching authentic Korean beauty techniques
+            <br />
+            20+ years of clinic experience.
+            <br />
+            No prior qualifications needed.
           </p>
         </motion.div>
 
@@ -62,7 +65,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}

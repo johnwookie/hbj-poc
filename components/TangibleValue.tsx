@@ -7,7 +7,7 @@ const BENEFITS = [
   {
     icon: <Globe size={24} />,
     title: "Authentic Korean Instruction",
-    description: "Taught by native Korean-trained therapists. Not adapted Western versions — the real techniques direct from Seoul."
+    description: "Taught by native Korean-trained therapists. The real techniques direct from Korea."
   },
   {
     icon: <Zap size={24} />,
@@ -83,7 +83,7 @@ const TangibleValue: React.FC = () => {
 
         {/* Train with the Best Section */}
         <div className="mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -95,9 +95,9 @@ const TangibleValue: React.FC = () => {
             </h2>
             <div className="w-24 h-[1px] bg-brand-pink mx-auto" />
           </motion.div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -105,14 +105,14 @@ const TangibleValue: React.FC = () => {
               className="lg:col-span-8 relative group"
             >
               <div className="aspect-[4/3] overflow-hidden bg-gray-50 rounded-3xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1600&auto=format&fit=crop" 
+                <img
+                  src="/images/KakaoTalk_Photo_2026-04-17-16-14-42.jpeg"
                   alt="Professional Student Kit Flat Lay"
                   className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              
+
               <div className="absolute -bottom-8 -right-8 hidden md:block">
                 <div className="bg-brand-charcoal text-white p-8 max-w-xs rounded-2xl">
                   <p className="text-[10px] tracking-[0.4em] uppercase mb-2 text-white/40">Included</p>
@@ -123,7 +123,7 @@ const TangibleValue: React.FC = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -152,7 +152,7 @@ const TangibleValue: React.FC = () => {
 
         {/* Path to Mastery Section */}
         <div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -175,9 +175,9 @@ const TangibleValue: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: index * 0.2 }}
-                className="p-12 bg-white border border-brand-charcoal/5 rounded-[40px] hover:shadow-xl transition-all duration-500"
+                className="p-12 bg-white border border-brand-charcoal/15 rounded-[40px] hover:shadow-xl transition-all duration-500"
               >
-                <span className="text-6xl font-serif text-brand-pink/20 block mb-8">{phase.number}</span>
+                <span className="text-6xl font-serif text-brand-pink block mb-8">{phase.number}</span>
                 <h3 className="text-2xl font-bold text-brand-charcoal mb-6">{phase.title}</h3>
                 <p className="text-brand-charcoal/60 text-sm leading-relaxed font-light">
                   {phase.description}
