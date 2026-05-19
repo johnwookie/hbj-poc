@@ -50,7 +50,7 @@ const Header: React.FC = () => {
 
           <div className="flex items-center gap-6 border-l border-brand-charcoal/10 pl-6">
             <a
-              href="#login"
+              href="/login"
               className={`flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 hover:text-brand-pink ${isScrolled ? 'text-brand-charcoal/60' : 'text-white/70'
                 }`}
             >
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
               ))}
               <div className="h-[1px] bg-brand-charcoal/5 w-full" />
               <a
-                href="#login"
+                href="/login"
                 className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-medium text-brand-charcoal/60"
               >
                 <User size={14} />

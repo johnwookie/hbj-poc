@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CoursesPage from './pages/CoursesPage';
 import CourseDetailPage from './pages/CourseDetailPage';
+import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +18,8 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/courses/:slug" element={<CourseDetailPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
         </main>
         <Footer />
