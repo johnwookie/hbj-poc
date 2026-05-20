@@ -139,3 +139,27 @@ CREATE POLICY "Students can view own enrollments" ON public.enrollments
 
 -- Note: Admin operations (updating courses, viewing all students/enrollments) 
 -- will bypass RLS if you use the Service Role Key in your backend/Edge Functions.
+
+-- =========================================================================
+-- ENROLLMENT FORMS (Digital Copy)
+-- =========================================================================
+CREATE TABLE public.enrollment_forms (
+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    enrollment_id uuid REFERENCES public.enrollments(id) NOT NULL,
+    student_id uuid REFERENCES public.students(id) NOT NULL,
+    status text DEFAULT 'draft',
+    form_data jsonb NOT NULL DEFAULT '{}'::jsonb,
+    admin_notes jsonb NOT NULL DEFAULT '{}'::jsonb,
+    submitted_at timestamp with time zone DEFAULT now(),
+    updated_at timestamp with time zone DEFAULT now()
+);
+
+ALTER TABLE public.enrollment_forms ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow anonymous insert of forms" ON public.enrollment_forms
+    FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Students can view own forms" ON public.enrollment_forms
+    FOR SELECT USING (
+        student_id IN (SELECT id FROM public.students WHERE auth_user_id = auth.uid())
+    );

@@ -132,7 +132,7 @@ serve(async (req) => {
       });
 
       if (authError) {
-        if (authError.message.includes("already exist")) {
+        if (authError.message.includes("already exist") || authError.message.includes("already registered")) {
           console.log(`User ${customerEmail} already exists. Finding their user ID...`)
           // In an Edge Function, finding an existing user's ID by email via Admin API requires listUsers
           // We fetch all users (assuming reasonable size) or rely on profiles table
@@ -151,24 +151,25 @@ serve(async (req) => {
       } else if (authData?.user) {
         userId = authData.user.id;
         console.log(`Created new student account for ${customerEmail} (ID: ${userId})`)
-        
-        // Wait a small moment for Supabase triggers (if any) to catch up, 
-        // then UPSERT directly into the 'students' table to guarantee they exist!
-        await new Promise(r => setTimeout(r, 1000));
-        
-        const { error: studentUpsertError } = await supabaseAdmin
-          .from('students')
-          .upsert({
-             id: userId,
-             email: customerEmail,
-             first_name: customerName?.split(' ')[0] || '',
-             last_name: customerName?.split(' ').slice(1).join(' ') || ''
-          })
+      }
+      
+      // Wait a small moment for Supabase triggers (if any) to catch up, 
+      // then UPSERT directly into the 'students' table to guarantee they exist!
+      await new Promise(r => setTimeout(r, 1000));
+      
+      const { error: studentUpsertError } = await supabaseAdmin
+        .from('students')
+        .upsert({
+           id: userId,
+           auth_user_id: userId,
+           email: customerEmail,
+           first_name: customerName?.split(' ')[0] || '',
+           last_name: customerName?.split(' ').slice(1).join(' ') || ''
+        })
 
-        if (studentUpsertError) {
-          console.error("FATAL: Failed to insert user into public.students table:", studentUpsertError);
-          return new Response("Failed to build student profile", { status: 200 });
-        }
+      if (studentUpsertError) {
+        console.error("FATAL: Failed to insert user into public.students table:", studentUpsertError);
+        return new Response("Failed to build student profile", { status: 200 });
       }
 
       // 5. Create the Enrollment Record
@@ -186,6 +187,53 @@ serve(async (req) => {
       }
       
       console.log(`SUCCESS: Enrolled ${customerEmail} into ${course.course_title}`)
+      
+      // 6. Send Welcome Email via Resend
+      const resendApiKey = Deno.env.get('RESEND_API_KEY');
+      if (resendApiKey) {
+        try {
+          const res = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${resendApiKey}`,
+            },
+            body: JSON.stringify({
+              from: 'HBJ Academy <onboarding@resend.dev>',
+              to: [customerEmail],
+              subject: `Welcome to ${course.course_title}!`,
+              html: `
+                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+                  <h1 style="color: #333;">Welcome to HBJ Academy!</h1>
+                  <p>Hi ${customerName || 'Student'},</p>
+                  <p>Thank you for purchasing <strong>${course.course_title}</strong>.</p>
+                  <p>Your account has been created successfully. You can log in to your dashboard to access your courses.</p>
+                  <div style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                    <p style="margin-top: 0;"><strong>Your Login Credentials:</strong></p>
+                    <p>Email: <strong>${customerEmail}</strong></p>
+                    <p style="margin-bottom: 0;">Password: <strong>${generatedPassword}</strong></p>
+                  </div>
+                  <p>Please log in and change your password as soon as possible.</p>
+                  <br/>
+                  <p>Best regards,<br/>The HBJ Academy Team</p>
+                </div>
+              `,
+            }),
+          });
+          
+          if (res.ok) {
+            console.log(`Successfully sent welcome email to ${customerEmail}`);
+          } else {
+            const errBody = await res.text();
+            console.error(`Failed to send Resend email: ${res.status} ${errBody}`);
+          }
+        } catch (e) {
+          console.error("Error connecting to Resend:", e);
+        }
+      } else {
+        console.warn("RESEND_API_KEY is not set. Skipping welcome email.");
+      }
+
       return new Response(JSON.stringify({ success: true }), { status: 200, headers: { "Content-Type": "application/json" } })
     }
 

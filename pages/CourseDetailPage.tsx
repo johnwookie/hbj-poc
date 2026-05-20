@@ -8,22 +8,55 @@ const CourseDetailPage: React.FC = () => {
   const [course, setCourse] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isRedirecting, setIsRedirecting] = useState(false);
+  
+  // Checkout Modal State
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [checkoutEmail, setCheckoutEmail] = useState('');
+  const [checkoutError, setCheckoutError] = useState('');
+  const [pendingPriceType, setPendingPriceType] = useState<'course' | 'application' | null>(null);
 
   const handleCheckout = async (priceType: 'course' | 'application') => {
-    // Determine which price token to use
-    // Default application uses application_id if temp, fallback to course
-    const priceId = priceType === 'course' 
-      ? (course?.course_payment_link || course?.application_payment_link)
-      : (course?.application_payment_link || course?.course_payment_link);
-      
-    if (!priceId || !priceId.startsWith('http')) {
-      alert("This course is currently not open for online enrollment via Stripe. Please generate a Stripe Payment Link and add it to your database.");
-      return;
-    }
+    setPendingPriceType(priceType);
     
+    // Check if logged in
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (session?.user?.email) {
+      // User is logged in, use their email directly
+      proceedToCheckout(session.user.email, priceType);
+    } else {
+      // Prompt for email
+      setShowEmailModal(true);
+    }
+  };
+
+  const proceedToCheckout = async (email: string, priceType: 'course' | 'application') => {
     setIsRedirecting(true);
-    // Directly navigate the browser to the Stripe Payment Link
-    window.location.href = priceId;
+    setCheckoutError('');
+    
+    try {
+      const response = await supabase.functions.invoke('create-checkout', {
+        body: {
+          email,
+          course_slug: slug,
+          priceType,
+          returnUrl: window.location.origin
+        }
+      });
+      
+      const { data, error } = response;
+      
+      if (error) throw new Error(error.message);
+      if (data.error) throw new Error(data.error);
+      
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err: any) {
+      console.error(err);
+      setCheckoutError(err.message || 'An error occurred during checkout');
+      setIsRedirecting(false);
+    }
   };
 
   useEffect(() => {
@@ -222,6 +255,55 @@ const CourseDetailPage: React.FC = () => {
 
         </div>
       </div>
+
+      {/* Checkout Email Modal */}
+      {showEmailModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white max-w-md w-full rounded-[20px] p-8 shadow-2xl">
+            <h3 className="font-serif text-2xl text-brand-charcoal mb-2">Checkout</h3>
+            <p className="text-sm text-brand-charcoal/70 mb-6">Enter your email address to continue to secure checkout.</p>
+            
+            {checkoutError && (
+              <div className="bg-red-50 text-red-600 text-sm p-4 rounded-xl mb-6 border border-red-100 text-center font-medium">
+                {checkoutError}
+              </div>
+            )}
+            
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              proceedToCheckout(checkoutEmail, pendingPriceType!);
+            }}>
+              <input 
+                type="email" 
+                required 
+                placeholder="Your email address" 
+                value={checkoutEmail}
+                onChange={(e) => setCheckoutEmail(e.target.value)}
+                className="w-full border border-brand-charcoal/20 px-4 py-3 focus:outline-none focus:border-brand-pink transition-colors mb-6 font-light"
+              />
+              <div className="flex gap-4">
+                <button 
+                  type="button" 
+                  onClick={() => {
+                    setShowEmailModal(false);
+                    setCheckoutError('');
+                  }}
+                  className="flex-1 py-3 border border-brand-charcoal text-[10px] tracking-widest uppercase font-bold text-brand-charcoal hover:bg-brand-charcoal/5 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit" 
+                  disabled={isRedirecting}
+                  className="flex-1 py-3 bg-brand-pink text-white text-[10px] tracking-widest uppercase font-bold hover:bg-brand-charcoal transition-colors disabled:opacity-50"
+                >
+                  {isRedirecting ? 'Wait...' : 'Continue'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
