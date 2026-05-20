@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { LogOut, BookOpen } from 'lucide-react';
+import { LogOut, BookOpen, AlertCircle } from 'lucide-react';
 
 const DashboardPage: React.FC = () => {
   const [session, setSession] = useState<any>(null);
@@ -17,12 +17,12 @@ const DashboardPage: React.FC = () => {
 
     const checkSessionAndFetchData = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      
+
       if (!session) {
         navigate('/login');
         return;
       }
-      
+
       setSession(session);
 
       try {
@@ -51,6 +51,10 @@ const DashboardPage: React.FC = () => {
               hero_media_url,
               course_kind,
               delivery_mode
+            ),
+            enrollment_forms (
+              id,
+              status
             )
           `)
           .order('created_at', { ascending: false });
@@ -93,21 +97,13 @@ const DashboardPage: React.FC = () => {
               Student Dashboard
             </p>
           </div>
-          
-          <button 
-            onClick={handleLogout}
-            className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-bold text-brand-charcoal/60 hover:text-brand-pink transition-colors"
-          >
-            <LogOut size={14} />
-            Log Out
-          </button>
         </div>
 
         <div className="mb-8">
           <h2 className="text-2xl font-serif text-brand-charcoal mb-6 border-b border-brand-charcoal/10 pb-4">
             Your Courses
           </h2>
-          
+
           {enrollments.length === 0 ? (
             <div className="bg-white p-12 text-center rounded-[20px] shadow-sm">
               <BookOpen size={48} className="mx-auto text-brand-charcoal/20 mb-4" />
@@ -115,7 +111,7 @@ const DashboardPage: React.FC = () => {
               <p className="text-sm text-brand-charcoal/60 mb-6 max-w-md mx-auto">
                 You haven't enrolled in any courses yet. Browse our catalog to find the perfect program for your career.
               </p>
-              <Link 
+              <Link
                 to="/courses"
                 className="inline-block px-8 py-4 bg-brand-pink text-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-brand-charcoal hover:text-white transition-all duration-300"
               >
@@ -127,9 +123,9 @@ const DashboardPage: React.FC = () => {
               {enrollments.map((enrollment, index) => {
                 const course = enrollment.course;
                 if (!course) return null; // Defensive check
-                
+
                 return (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -138,10 +134,10 @@ const DashboardPage: React.FC = () => {
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-brand-charcoal/5">
                       {course.hero_media_url ? (
-                        <img 
-                          src={course.hero_media_url} 
-                          alt={course.course_title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                        <img
+                          src={course.hero_media_url}
+                          alt={course.course_title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-brand-charcoal/20 bg-brand-charcoal/5">
@@ -152,9 +148,27 @@ const DashboardPage: React.FC = () => {
                         <span className="bg-brand-pink text-brand-charcoal text-[10px] tracking-widest uppercase px-3 py-1 font-bold">
                           {enrollment.status}
                         </span>
+                        
+                        {(() => {
+                          const form = enrollment.enrollment_forms?.[0];
+                          const formStatus = form?.status || 'incomplete';
+                          
+                          if (formStatus === 'submitted') {
+                            return (
+                              <span className="bg-green-500 text-white text-[10px] tracking-widest uppercase px-3 py-1 font-bold shadow-sm">
+                                Form Complete
+                              </span>
+                            );
+                          }
+                          return (
+                            <span className="bg-red-500 text-white text-[10px] tracking-widest uppercase px-3 py-1 font-bold shadow-sm flex items-center gap-2">
+                              <AlertCircle size={12} /> Action Required
+                            </span>
+                          );
+                        })()}
                       </div>
                     </div>
-                    
+
                     <div className="p-8 flex flex-col flex-grow">
                       <div className="flex items-center gap-2 mb-4">
                         <span className="text-brand-charcoal/50 text-[10px] tracking-widest uppercase">
@@ -169,18 +183,36 @@ const DashboardPage: React.FC = () => {
                           </>
                         )}
                       </div>
-                      
+
                       <h3 className="font-serif text-2xl text-brand-charcoal mb-8 group-hover:text-brand-pink transition-colors">
                         {course.course_title}
                       </h3>
-                      
-                      <div className="mt-auto">
-                        <Link 
-                          to={`/courses/${course.slug}`}
-                          className="inline-block w-full text-center py-4 border border-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-brand-charcoal hover:text-white transition-all duration-300"
-                        >
-                          View Course Details
-                        </Link>
+
+                      <div className="mt-auto flex flex-col gap-3">
+                        {(() => {
+                          const form = enrollment.enrollment_forms?.[0];
+                          const formStatus = form?.status || 'incomplete';
+                          
+                          if (formStatus !== 'submitted') {
+                            return (
+                              <Link
+                                to={`/dashboard/enrollment-form/${enrollment.id}`}
+                                className="inline-block w-full text-center py-4 bg-brand-pink text-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-brand-charcoal hover:text-white transition-all duration-300 shadow-sm"
+                              >
+                                {formStatus === 'draft' ? 'Resume Application' : 'Complete Application'}
+                              </Link>
+                            );
+                          }
+                          
+                          return (
+                            <Link
+                              to={`/courses/${course.slug}`}
+                              className="inline-block w-full text-center py-4 border border-brand-charcoal text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-brand-charcoal hover:text-white transition-all duration-300"
+                            >
+                              View Course Details
+                            </Link>
+                          );
+                        })()}
                       </div>
                     </div>
                   </motion.div>
