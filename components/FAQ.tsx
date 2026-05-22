@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     question: "Is the student kit included in tuition?",
-    answer: "Yes. Every full program enrolment includes a comprehensive professional kit with medical-grade products — all included in your tuition fee."
+    answer: "Yes. Every full program enrolment includes a comprehensive professional kit with clinical-grade products — all included in your tuition fee."
   },
   {
     question: "Do you offer job placement or internships?",

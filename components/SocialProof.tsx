@@ -38,15 +38,15 @@ const SocialProof: React.FC = () => {
           transition={{ duration: 1 }}
           className="mb-16 md:mb-24"
         >
-          <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-4 tracking-tight">
-            The Next Generation <br /> of Masters.
+          <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-4 tracking-tight text-center">
+            The Next Generation of Masters.
           </h2>
-          <p className="text-brand-charcoal/40 text-[10px] tracking-[0.5em] uppercase">
-            Real messages from real graduates
+          <p className="text-brand-charcoal/40 text-[10px] tracking-[0.5em] uppercase text-center">
+            Real testimonials from real graduates
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 md:mb-16">
           {imageTestimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -85,10 +85,10 @@ const SocialProof: React.FC = () => {
               </p>
               <div className={`rounded-2xl overflow-hidden bg-brand-charcoal ${video.aspect}`}>
                 <iframe
-                  src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0`}
+                  src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&autoplay=0`}
                   title={video.label || 'Testimonial'}
                   className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>

@@ -25,7 +25,7 @@ const PHASES = [
   {
     number: "01",
     title: "Theory & Foundations",
-    description: "Flexible scheduling — 2 days per week, 10am to 4pm. Covers skin anatomy, product chemistry, massage techniques, and Korean protocols."
+    description: "Flexible scheduling. Covers skin anatomy, product chemistry, massage techniques, and Korean protocols."
   },
   {
     number: "02",
