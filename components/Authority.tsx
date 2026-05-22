@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import janePhoto from '@/images/Jane Photo.png';
 
 const CREDENTIALS = [
   "COMONDE Academy Instructor",
@@ -27,7 +28,7 @@ const Authority: React.FC = () => {
         >
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-8 border-2 border-white/10">
             <img
-              src="/images/KakaoTalk_Photo_2026-04-03-16-38-00.png"
+              src={janePhoto}
               alt="Jane Kim"
               className="w-full h-full object-cover object-top"
             />

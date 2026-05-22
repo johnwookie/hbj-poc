@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Globe, Zap, Briefcase } from 'lucide-react';
+import clinicalPhoto from '@/images/clinical.jpeg';
 
 const BENEFITS = [
   {
@@ -106,7 +107,7 @@ const TangibleValue: React.FC = () => {
             >
               <div className="aspect-[4/3] overflow-hidden bg-gray-50 rounded-3xl">
                 <img
-                  src="/images/KakaoTalk_Photo_2026-04-17-16-14-42.jpeg"
+                  src={clinicalPhoto}
                   alt="Professional Student Kit Flat Lay"
                   className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0"
                   referrerPolicy="no-referrer"
@@ -134,7 +135,7 @@ const TangibleValue: React.FC = () => {
                 "Don't learn on basic materials."
               </p>
               <p className="text-brand-charcoal/60 text-base font-light leading-relaxed">
-                Your education is only as good as the tools you train with. Every full program includes a professional kit featuring the same medical-grade products we use daily at Healing by J.
+                Your education is only as good as the tools you train with. Every full program includes a professional kit featuring the same clinical-grade products we use daily at Healing by J.
               </p>
               <div className="pt-8">
                 <ul className="space-y-4">
