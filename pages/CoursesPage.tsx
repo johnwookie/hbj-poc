@@ -2,6 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { Link } from 'react-router-dom';
 
+const PINNED = ['Foundation Program', 'Intermediate Program', 'Advanced Professional'];
+
+const sortCourses = (courses: any[]) => {
+  return [...courses].sort((a, b) => {
+    const aPin = PINNED.indexOf(a.course_title);
+    const bPin = PINNED.indexOf(b.course_title);
+    if (aPin !== -1 && bPin !== -1) return aPin - bPin;
+    if (aPin !== -1) return -1;
+    if (bPin !== -1) return 1;
+    const aPrice = a.price_total ?? null;
+    const bPrice = b.price_total ?? null;
+    if (aPrice === null && bPrice === null) return (a.course_title || '').localeCompare(b.course_title || '');
+    if (aPrice === null) return 1;
+    if (bPrice === null) return -1;
+    if (aPrice !== bPrice) return aPrice - bPrice;
+    return (a.course_title || '').localeCompare(b.course_title || '');
+  });
+};
+
 const CoursesPage: React.FC = () => {
   const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -9,17 +28,16 @@ const CoursesPage: React.FC = () => {
   useEffect(() => {
     // Scroll to top on mount
     window.scrollTo(0, 0);
-    
+
     const fetchCourses = async () => {
       try {
         const { data, error } = await supabase
           .from('courses')
           .select('*')
-          .eq('is_published', true)
-          .order('created_at', { ascending: false });
+          .eq('is_published', true);
           
         if (error) throw error;
-        setCourses(data || []);
+        setCourses(sortCourses(data || []));
       } catch (err) {
         console.error('Error fetching courses:', err);
       } finally {

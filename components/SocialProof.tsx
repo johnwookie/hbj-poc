@@ -29,14 +29,14 @@ const videoTestimonials = [
 
 const SocialProof: React.FC = () => {
   return (
-    <section className="bg-white py-32 md:py-48 px-6 lg:px-24">
+    <section className="bg-white py-16 md:py-24 px-6 lg:px-24">
       <div className="max-w-screen-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="mb-16 md:mb-24"
+          className="mb-10 md:mb-14"
         >
           <h2 className="font-serif text-5xl md:text-7xl text-brand-charcoal mb-4 tracking-tight text-center">
             The Next Generation of Masters.
@@ -46,7 +46,7 @@ const SocialProof: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           {imageTestimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}

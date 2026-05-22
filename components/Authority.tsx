@@ -56,6 +56,15 @@ const Authority: React.FC = () => {
             </motion.li>
           ))}
         </ul>
+
+        <div className="w-16 h-[1px] bg-white/20 mt-10 mb-8" />
+
+        <a
+          href="#programs"
+          className="inline-block text-white text-xs tracking-[0.3em] uppercase border-b border-white/30 pb-2 hover:border-white transition-all duration-500"
+        >
+          Learn from Jane
+        </a>
       </motion.div>
     </section>
   );

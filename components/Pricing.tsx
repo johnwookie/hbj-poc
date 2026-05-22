@@ -12,6 +12,7 @@ const PROGRAMS = [
     bulletLabel: "Modules can include",
     bullets: ["Facial Lifting Massage", "Headache Relief Massage", "Baby Massage", "Lower Back Release", "Abdominal Circulation"],
     cta: "View Modules",
+    href: "https://hbj-academy.com/courses",
     highlight: false
   },
   {
@@ -23,6 +24,7 @@ const PROGRAMS = [
     bulletLabel: "Program Highlights",
     bullets: ["Full Body Massage", "V-Shape Facial Lifting", "Korean Basic Facial", "Hydrafacial & RF", "Endermologie & Slimming", "Skin Analysis"],
     cta: "Explore Foundation",
+    href: "https://hbj-academy.com/courses/foundation-program",
     highlight: false
   },
   {
@@ -34,6 +36,7 @@ const PROGRAMS = [
     bulletLabel: "Program Highlights",
     bullets: ["V-Shape Facial", "Water Bomb (Glass Skin)", "Anti-Aging Lifting Facial", "Treatment Customisation", "Advanced Skin Analysis", "Professional Clinic Standards"],
     cta: "Explore Intermediate",
+    href: "https://hbj-academy.com/courses/intermediate-program",
     highlight: true
   },
   {
@@ -45,6 +48,7 @@ const PROGRAMS = [
     bulletLabel: "Program Highlights",
     bullets: ["Korean Kyeong-lak Face & Body", "Remedial Massage", "HIFU, RF Laser & Needling", "Slimming Machinery", "Acne Treatment & Extraction", "Goong Woman Therapy"],
     cta: "Apply for Advanced",
+    href: "https://hbj-academy.com/courses/advanced-professional-program",
     highlight: false
   }
 ];
@@ -115,14 +119,17 @@ const Pricing: React.FC = () => {
                 </div>
               </div>
 
-              <button
-                className={`w-full py-5 text-[10px] tracking-[0.4em] uppercase font-medium transition-all duration-500 border ${program.highlight
+              <a
+                href={program.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-full py-5 text-[10px] tracking-[0.4em] uppercase font-medium text-center transition-all duration-500 border ${program.highlight
                     ? 'bg-white text-brand-charcoal border-white hover:bg-brand-pink hover:border-brand-pink'
                     : 'bg-brand-charcoal text-white border-brand-charcoal hover:bg-brand-pink hover:border-brand-pink hover:text-brand-charcoal'
                   }`}
               >
                 {program.cta}
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
