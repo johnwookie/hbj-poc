@@ -13,7 +13,7 @@ const BENEFITS = [
   {
     icon: <Zap size={24} />,
     title: "Earn While You Study",
-    description: "From month one, passing a module can unlock paid work shifts at the Healing by J clinic in Melbourne CBD."
+    description: "From month one, passing a module can lead to paid work shifts at the Healing by J clinic in Melbourne CBD."
   },
   {
     icon: <Briefcase size={24} />,

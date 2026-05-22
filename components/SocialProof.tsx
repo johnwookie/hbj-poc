@@ -71,8 +71,8 @@ const SocialProof: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {videoTestimonials.map((video, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-6">
+          {videoTestimonials.slice(0, 2).map((video, index) => (
             <motion.div
               key={video.youtubeId}
               initial={{ opacity: 0, y: 30 }}
@@ -95,6 +95,33 @@ const SocialProof: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="rounded-2xl overflow-hidden bg-brand-charcoal/95 p-5 flex flex-col">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-white/40 mb-4">Tiffany</p>
+            <div className="rounded-xl overflow-hidden aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/FdOLqoAoGvM?rel=0&autoplay=0"
+                title="Tiffany"
+                className="w-full h-full"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <p className="mt-5 text-white/70 text-sm font-light leading-relaxed">
+              Tiffany was originally running an eyelash salon and joined our 4-week short course to expand her business into skincare treatments.
+            </p>
+            <p className="mt-3 text-white/70 text-sm font-light leading-relaxed">
+              After completing the training at Healing by J Academy, she introduced professional skincare devices and products and successfully started offering skincare services in her salon.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
