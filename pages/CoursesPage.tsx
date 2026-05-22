@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { Link } from 'react-router-dom';
 
-const PINNED = ['Foundation Program', 'Intermediate Program', 'Advanced Professional'];
+const PINNED = ['Foundation Program', 'Intermediate Program', 'Advanced Professional Program'];
 
 const sortCourses = (courses: any[]) => {
   return [...courses].sort((a, b) => {
