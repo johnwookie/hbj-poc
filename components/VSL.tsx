@@ -1,15 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 
+const YOUTUBE_ID = 'sp0c8NavUQU';
+
 const VSL: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-    setTimeout(() => videoRef.current?.play(), 100);
-  };
 
   return (
     <section className="bg-white py-24 md:py-32 px-6 lg:px-24">
@@ -21,21 +17,25 @@ const VSL: React.FC = () => {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative group aspect-video overflow-hidden rounded-3xl bg-brand-charcoal shadow-2xl"
         >
-          <video
-            ref={videoRef}
-            src="/videos/HBJ Academy Open Day.mp4"
-            className="w-full h-full object-cover"
-            controls={isPlaying}
-            playsInline
-            preload="metadata"
-          />
-
-          {!isPlaying && (
+          {isPlaying ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+              title="HBJ Academy Open Day"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
             <>
+              <img
+                src={`https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
+                alt="HBJ Academy Open Day"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-brand-charcoal/30 to-transparent" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
                 <motion.button
-                  onClick={handlePlay}
+                  onClick={() => setIsPlaying(true)}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-20 h-20 md:w-28 md:h-28 bg-brand-pink text-brand-charcoal rounded-full flex items-center justify-center mb-8 shadow-xl cursor-pointer"

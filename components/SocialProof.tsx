@@ -11,16 +11,19 @@ const imageTestimonials = [
 
 const videoTestimonials = [
   {
-    src: '/videos/20260314_174652.mp4',
+    youtubeId: 'G8sMLdVYhTw',
     label: 'March 2026 Graduation Cohort',
+    aspect: 'aspect-[9/16]',
   },
   {
-    src: '/testimonials/KakaoTalk_Video_2026-05-11-12-30-11.mp4',
-    label: "",
+    youtubeId: 'SsUpiFVDgtY',
+    label: '',
+    aspect: 'aspect-[9/16]',
   },
   {
-    src: '/testimonials/Tiffany Testimonial.mp4',
-    label: "Tiffany",
+    youtubeId: 'FdOLqoAoGvM',
+    label: 'Tiffany',
+    aspect: 'aspect-video',
   },
 ];
 
@@ -71,7 +74,7 @@ const SocialProof: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {videoTestimonials.map((video, index) => (
             <motion.div
-              key={video.src}
+              key={video.youtubeId}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -80,13 +83,13 @@ const SocialProof: React.FC = () => {
               <p className="text-brand-charcoal/40 text-[10px] tracking-[0.5em] uppercase mb-4">
                 {video.label}
               </p>
-              <div className="rounded-2xl overflow-hidden bg-brand-charcoal aspect-[9/16]">
-                <video
-                  src={video.src}
-                  className="w-full h-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
+              <div className={`rounded-2xl overflow-hidden bg-brand-charcoal ${video.aspect}`}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0`}
+                  title={video.label || 'Testimonial'}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
             </motion.div>

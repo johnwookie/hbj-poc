@@ -5,11 +5,11 @@ import { Plus, Minus } from 'lucide-react';
 const FAQS = [
   {
     question: "Do I need prior experience or qualifications?",
-    answer: "No. Our Foundation Program is designed for absolute beginners — no beauty diploma or prior qualifications are required. Australia has no licensing requirement for beauty and massage work, so you can start from zero."
+    answer: "No. Our Foundation Program is designed for absolute beginners — no beauty diploma or prior qualifications are required. You can start from zero."
   },
   {
     question: "Where are classes held?",
-    answer: "All practical training takes place at our Melbourne CBD facility — Level 3, 415 Bourke Street, Melbourne VIC 3000. Classes run twice a week, 10am to 4pm with a one-hour break."
+    answer: "All practical training takes place at our Melbourne CBD facility — Level 3, 415 Bourke Street, Melbourne VIC 3000. The specific schedule, including the days and class times for the single course, will be determined after enrolment."
   },
   {
     question: "Is the student kit included in tuition?",
@@ -17,11 +17,11 @@ const FAQS = [
   },
   {
     question: "Do you offer job placement or internships?",
-    answer: "Yes. Our Paid Internship Package includes a 3-month apprenticeship contract at Healing by J. High-performing students may also transition into part-time or ongoing roles at the clinic."
+    answer: "Yes, after completing the course and passing the assessment, selected students may have the opportunity to undertake an apprenticeship."
   },
   {
     question: "Can I pay in instalments?",
-    answer: "Yes. We offer flexible payment plans for the Foundation Program — a $150 application fee plus bi-weekly instalments. Contact us for full details."
+    answer: "Yes. We offer flexible payment plans for some programs — once the application fee for each course is paid, the remaining balance can be paid through bi-weekly instalments. Contact us for full details."
   },
   {
     question: "What are the optional clinical placements?",

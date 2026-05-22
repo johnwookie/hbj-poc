@@ -17,7 +17,7 @@ const BENEFITS = [
   {
     icon: <Briefcase size={24} />,
     title: "Job Guarantee Pathway",
-    description: "Our Paid Internship Package includes a 3-month apprenticeship contract at Healing by J. Top students transition into paid roles."
+    description: "After completing the course, students who maintain an appropriate level of performance and wish to continue may have the opportunity to undertake an apprenticeship at Healing by J Clinic or Spa."
   }
 ];
 
@@ -117,7 +117,7 @@ const TangibleValue: React.FC = () => {
                 <div className="bg-brand-charcoal text-white p-8 max-w-xs rounded-2xl">
                   <p className="text-[10px] tracking-[0.4em] uppercase mb-2 text-white/40">Included</p>
                   <p className="text-sm font-light leading-relaxed">
-                    Every full program includes a comprehensive professional kit with medical-grade products — included in your tuition.
+                    Every full program includes a comprehensive professional kit with clinical-grade products — included in your tuition.
                   </p>
                 </div>
               </div>

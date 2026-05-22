@@ -1,42 +1,49 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import vShapeImg from '@/images/V Shape Facial Lifting.png';
+import kyeongLakImg from '@/images/Korean Kyeong-lak.png';
+import clinicalImg from '@/images/Clinical Machinery.jpg';
+import waterBombImg from '@/images/Water bomb Facial.png';
+import antiAgingImg from '@/images/Antiaging lifting facial.png';
+import remedialImg from '@/images/Remedial Massage.png';
+import endermologieImg from '@/images/Endermologie & Slimming.png';
 
 const SKILLS = [
   {
     title: "V-Shape Facial Lifting",
     subtitle: "Non-surgical face contouring using manual massage and muscle manipulation. Visible results after one session.",
-    imageUrl: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop"
+    imageUrl: vShapeImg
   },
   {
     title: "Korean Kyeong-lak (경락)",
     subtitle: "Meridian-based massage rooted in Traditional Korean Medicine. Pressure along energy pathways to rejuvenate skin and body.",
-    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop"
+    imageUrl: kyeongLakImg
   },
   {
     title: "Clinical Machinery",
     subtitle: "Hands-on training with HIFU, RF, Endermologie, Hydrafacial, and Picoway — the same devices used in Seoul's top clinics.",
-    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop"
+    imageUrl: clinicalImg
   },
   {
     title: "Water Bomb Facials",
     subtitle: "Glass skin, wrinkle filler, and spot eraser protocols — the hydration techniques behind Korea's famous dewy look.",
-    imageUrl: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop"
+    imageUrl: waterBombImg
   },
   {
     title: "Anti-Aging Lifting Facial",
     subtitle: "Non-invasive lifting and firming techniques that deliver visible tightening without surgery or injections.",
-    imageUrl: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop"
+    imageUrl: antiAgingImg
   },
   {
     title: "Remedial Massage",
     subtitle: "Deep tissue and therapeutic bodywork for pain relief, injury recovery, and chronic tension management.",
-    imageUrl: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+    imageUrl: remedialImg
   },
   {
     title: "Endermologie & Slimming",
     subtitle: "Body contouring, cellulite reduction, and slimming machinery techniques used in Seoul's premium clinics.",
-    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop"
+    imageUrl: endermologieImg
   },
   {
     title: "Korean Body Scrub",
